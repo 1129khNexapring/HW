@@ -1,0 +1,112 @@
+.section {
+	margin-top: 50px;
+}
+
+.bbs {
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.bbs table {
+	width: 100%;
+	border-top: 1px solid #343434;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.bbs table td {
+	padding: 15px 0px;
+	border-bottom: 1px solid #c2c2c2;
+	font-size: 16px;
+}
+
+.td-left {
+	width: 100px;
+}
+.t_da {
+	margin-right: 300px;
+	float: right;
+}
+
+.input_text {
+	width: 1220px;
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+#strong {
+	margin-right: 15px;
+	font-weight: bold;
+}
+
+.textarea {
+	box-sizing: border-box;
+	width: 1220px;
+	height: 220px;
+	padding: 5px;
+	margin: 0;
+	border: 1px solid #d9d9d9;
+	font-size: 16px;
+	resize: none;
+	background: #fff;
+}
+.enr_btn {
+	width: 1300px;
+	margin-top: 30px;
+	padding-bottom: 30px;
+}
+.input-btn {
+	padding-left: 500px;
+	width: 700px;
+	float: left;
+	text-align: center;
+}
+#list_l:hover {
+	background: rgb(14, 74, 129);
+}
+.enr_btn {
+	width: 1300px;
+	margin-top: 30px;
+	padding-bottom: 30px;
+}
+.input-btn {
+	padding-left: 500px;
+	width: 700px;
+	float: left;
+	text-align: center;
+}
+.a-btn {
+	width: 100px;
+	float: left;
+}
+#btn1 {
+	margin-left: 100px;
+	float: left;
+	height: 40px;
+	width: 100px;
+	border-radius: 3px;
+	padding: 5px;
+	border: 0px;
+	font-size: 15px;
+	color: #fff;
+	cursor: pointer;
+	background-color: rgb(14, 74, 129);
+}
+#list_l {
+	height: 40px;
+	float: right;
+	display: inline-block;
+	border-radius: 2px;
+	padding: 10px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background: rgb(60, 60, 60);
+	text-decoration: none;
+	color: #fff;
+}

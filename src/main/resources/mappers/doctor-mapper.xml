@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DoctorMapper">
+	<resultMap type="Doctor" id="doctorResultMap">
+	<id property="doctorId" column="DOCTOR_ID"/>
+	<result property="doctorNo" column="DOCTOR_NO"/>
+	<result property="doctorPw" column="DOCTOR_PW"/>
+	<result property="doctorName" column="DOCTOR_NAME"/>
+	<result property="doctorDpt" column="DOCTOR_DPT"/>
+	<result property="doctorPhone" column="DOCTOR_PHONE"/>
+	<result property="doctorEmail" column="DOCTOR_EMAIL"/>
+	</resultMap>
+	<select id="selectLoginDoctor" parameterType="Doctor" resultMap="doctorResultMap">
+		SELECT * FROM DOCTOR WHERE DOCTOR_ID = #{doctorId} AND DOCTOR_PW = #{doctorPw}
+	</select>
+	<insert id="insertDoctor" parameterType="Doctor">
+		INSERT INTO DOCTOR VALUES(#{doctorNo}, #{doctorId}, #{doctorPw}, #{doctorName}, #{doctorDpt}, #{doctorPhone}, #{doctorEmail})
+	</insert>
+	<update id="updateDoctor" parameterType="Doctor">
+		UPDATE DOCTOR SET DOCTOR_PW = #{doctorPw}, DOCTOR_DPT = #{doctorDpt}, DOCTOR_PHONE = #{doctorPhone}, DOCTOR_EMAIL = #{doctorEmail} WHERE DOCTOR_ID = #{doctorId}
+	</update>
+	<delete id="deleteDoctor" parameterType="String">
+		DELETE FROM DOCTOR WHERE DOCTOR_ID = #{doctorId} AND DOCTOR_PW = #{doctorPw}
+	</delete>
+	<select id="find_doc_id" parameterType="String" resultMap="doctorResultMap"> SELECT DOCTOR_ID FROM DOCTOR WHERE DOCTOR_NAME = #{doctorName} AND DOCTOR_EMAIL= #{doctorEmail} </select>
+	<select id="find_doc_pwd" parameterType="String" resultMap="doctorResultMap"> --> SELECT DOCTOR_PW FROM DOCTOR WHERE DOCTOR_ID = #{doctorId} AND DOCTOR_PHONE =#{doctorPhone} </select>
+	<select id="checkIdDup" parameterType="Doctor" resultType="_int">
+		SELECT COUNT(*) FROM DOCTOR WHERE DOCTOR_ID = #{doctorId}
+	</select>
+</mapper>

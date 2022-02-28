@@ -1,0 +1,172 @@
+#content_box {
+	float: left;
+	width: 1100px;
+}
+
+#content_box .notice_page_title {
+	position: relative;
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tit_page {
+	width: 70%;
+	line-height: 1;
+	font-size: 35px;
+	color: #000;
+	font-weight: 400;
+}
+
+.btn_wr {
+	width: 15%;
+	float: right;
+	font-size: 25px;
+	border: none;
+	cursor: pointer;
+	background: white;
+}
+
+.btn_wr #write {
+	padding-right: 10px;
+	float: right;
+}
+
+.section {
+	margin-top: 50px;
+}
+
+.bbs {
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.bbs table {
+	width: 100%;
+	border-top: 1px solid #343434;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+thead {
+	background: rgb(237, 237, 237);
+	height: 50px;
+	border-bottom: 2px solid #c2c2c2;
+}
+
+tr {
+	display: table-row;
+	border-color: inherit;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.bbs_ table th, .bbs table td {
+	padding: 15px 20px;
+	border-bottom: 1px solid #c2c2c2;
+	font-size: 16px;
+}
+
+.bbs table .space {
+	background: #fdfdfd;
+}
+
+.ta {
+	text-align: center;
+}
+#no {
+	width: 70px;
+}
+#detail {
+	width: 700px;
+}
+#writer {
+	width: 113px;
+}
+#date {
+	width: 164px;
+}
+#count {
+	width: 80px;
+}
+
+.paging{
+	
+	margin-top: 20px;
+	padding: 20px 0;
+    font-size: 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+.on{
+	
+	width:50px;
+	height:50px;
+	border: 1px solid rgb(237, 237, 237);
+	background: rgb(237, 237, 237);
+	cursor:pointer;	
+	color: black;
+}
+
+
+
+.on1{
+	margin-left: 15px;
+	width:50px;
+	height:50px;
+	border: 1px solid rgb(237, 237, 237);
+	background: rgb(237, 237, 237);
+	cursor:pointer;
+	color: black;
+}
+
+.on2{
+	margin-left: 15px;
+	width:50px;
+	height:50px;
+	border: 1px solid rgb(237, 237, 237);
+	background: rgb(237, 237, 237);
+	cursor:pointer;	
+	color: black;
+}
+
+
+.on:hover{
+	background:rgb(14, 74, 129); 
+ 	color: #fff;
+}
+
+ .on1:hover{ 
+ 	background:rgb(14, 74, 129); 
+ 	color: #fff;
+ } 
+
+ .on2:hover{ 
+ 	background:rgb(14, 74, 129); 
+ 	color: #fff;
+ } 
+ .register_btn {
+	margin-top: 40px;
+	float: right;
+}
+
+#register_l {
+	height: 40px;
+	display: inline-block;
+	border-radius: 2px;
+	padding: 10px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background: rgb(14, 74, 129);
+	text-decoration: none;
+	color: #fff;
+	
+}
