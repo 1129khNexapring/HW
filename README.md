@@ -35,9 +35,8 @@
 
 ![비회원일반예약 ](https://user-images.githubusercontent.com/56354642/157622734-9bfa2fe9-b580-4477-a7db-83eb83e2ecc6.PNG)
 
-![일반예약 확인](https://user-images.githubusercontent.com/56354642/157625190-247c23e4-7b38-4a93-83f2-c11dc266faaf.PNG)
 
 ![비회원 일반예약 조회](https://user-images.githubusercontent.com/56354642/157627833-c1cf1ed1-baa6-4ef3-946c-0b5aeb383d0d.PNG)
 비회원은 이름, 생년월일, 전화번호를 입력해야 예약조회를 할 수 있음.
 
-![일반예약 확인2](https://user-images.githubusercontent.com/56354642/157628342-4a39e83a-e62a-4704-8363-95596d954953.PNG)
+![일반예약 확인](https://user-images.githubusercontent.com/56354642/157625190-247c23e4-7b38-4a93-83f2-c11dc266faaf.PNG)
