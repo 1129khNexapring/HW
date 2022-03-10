@@ -149,6 +149,11 @@
 
 ## Document
 
+1. 유스케이스
+
+![UML](https://user-images.githubusercontent.com/56354642/157690257-56a9372b-7405-4c17-b734-712b13e12e91.PNG)
+
+
 2. ERD
 
 ![ERD](https://user-images.githubusercontent.com/56354642/157687792-e3119771-d33c-45c5-bc64-86c413a2198d.PNG)
