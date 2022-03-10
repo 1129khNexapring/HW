@@ -9,6 +9,27 @@
 ### [6. Document](#Document)
 
 
+## 개요
+* 병원 홈페이지를 통해 온라인 예약뿐만 아니라 다양한 정보를 확인하고 특별한 서비스 이용
+* 코로나19로 인해 병원 방문객이 많고 거리두기가 필수인 상황에서 병원 홈페이지를 통해 편리함을 제공
+
+## 설계의 주안점
+
+## 사용기술 및 개발환경
+|Category | Detail |
+| ------- | ------ |
+| FrontEnd | HTML5, JS, CSS3, JQuery |
+| BackEnd  | java, Servlet/JSP |
+| OS       | Windows 10, 11 |
+| IDE      | Eclipse, Visual Studio |
+| Server   | Apatch Tomcat(v8.5) |
+| DataBase | Oracle(11g) - SQL Developer |
+
+![개발환경](https://user-images.githubusercontent.com/56354642/157645005-18e1c0ee-df0c-44ca-9d7d-4907eb3c25c1.PNG)
+
+
+## 프로젝트 기능 구현
+
 ## 주요기능
 
 ### 1. 메인화면
