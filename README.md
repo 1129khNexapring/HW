@@ -27,16 +27,31 @@
 
 ### 4. 진료예약
 
-### 4-1. 일반예약
+#### 4-1. 일반예약
 ![진료예약 화면](https://user-images.githubusercontent.com/56354642/157622687-2572bd44-ccdd-4ebe-ac4b-58d6ae8362de.PNG)
 
-![회원 일반예약](https://user-images.githubusercontent.com/56354642/157626396-ee4cc621-998a-4ce2-a2f7-eb6574aa2c66.PNG)
-회원은 예약자명, 생년월일, 전화번호가 자동으로 불러옴.
+
+![회원일반예약](https://user-images.githubusercontent.com/56354642/157630197-c11f08ef-59d9-48e9-8fe2-cb0f3e9f43be.PNG)
+
 
 ![비회원일반예약 ](https://user-images.githubusercontent.com/56354642/157622734-9bfa2fe9-b580-4477-a7db-83eb83e2ecc6.PNG)
 
 
-![비회원 일반예약 조회](https://user-images.githubusercontent.com/56354642/157627833-c1cf1ed1-baa6-4ef3-946c-0b5aeb383d0d.PNG)
-비회원은 이름, 생년월일, 전화번호를 입력해야 예약조회를 할 수 있음.
+![비회원일반예약조회](https://user-images.githubusercontent.com/56354642/157630755-c6bd99ba-2aa4-43f5-b493-66d6bfa0b719.PNG)
 
 ![일반예약 확인](https://user-images.githubusercontent.com/56354642/157625190-247c23e4-7b38-4a93-83f2-c11dc266faaf.PNG)
+
+#### 4-2. 동행서비스 예약
+
+
+![비회원 동행서비스 예약](https://user-images.githubusercontent.com/56354642/157630876-5d21d947-8229-4876-a892-a030581bf88a.PNG)
+
+![회원 동행서비스예약](https://user-images.githubusercontent.com/56354642/157632172-f3df26a6-3583-44ff-a248-b0daf6415bb5.PNG)
+
+![비회원 동행서비스 예약조회](https://user-images.githubusercontent.com/56354642/157633816-96ef25ab-85a1-4427-8d5a-3dd877452d7a.PNG)
+
+
+![동행서비스 예약확인](https://user-images.githubusercontent.com/56354642/157632922-4edadf2d-89f9-4fca-b6fe-a6bc47125f1b.PNG)
+
+
+
