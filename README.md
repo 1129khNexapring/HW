@@ -48,6 +48,9 @@
 
 ![회원 동행서비스예약](https://user-images.githubusercontent.com/56354642/157632172-f3df26a6-3583-44ff-a248-b0daf6415bb5.PNG)
 
+![동행서비스 예약조회 선택](https://user-images.githubusercontent.com/56354642/157634539-b2b92158-b05d-4756-82aa-36bd17c51d92.PNG)
+
+
 ![비회원 동행서비스 예약조회](https://user-images.githubusercontent.com/56354642/157633816-96ef25ab-85a1-4427-8d5a-3dd877452d7a.PNG)
 
 
