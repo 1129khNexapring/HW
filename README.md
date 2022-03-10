@@ -52,7 +52,7 @@
  
 * 안준영
   + 메인 페이지
-  + 공지사항
+  + 공지사항 게시판
     + 최신순 정렬 페이징
     + 관리자 권한만 글 등록, 수정, 삭제 가능
   + 아이디/비밀번호 찾기
@@ -73,7 +73,7 @@
       + 진료과
       + 의료진 소개
    + 병원안내
-      + 찾아오시는 
+      + 찾아오시는 길
    + 진료이력
       + 마이페이지
         + 과거 진료받은 이력 조회
@@ -107,29 +107,27 @@
 
 ![의사 회원가입 화면](https://user-images.githubusercontent.com/56354642/157620565-1db17790-2b34-4ae7-a8ce-c40541208683.PNG)
 
+### 4. 아이디/비밀번호 찾기
 ![아이디 비밀번호 찾기 화면](https://user-images.githubusercontent.com/56354642/157621045-9c404c30-083d-4085-83f2-5572b7dec6de.PNG)
 
 ![아이디 비밀번호 찾기2](https://user-images.githubusercontent.com/56354642/157621733-32de9487-838a-4a8f-ae2b-6c2b289de4a5.PNG)
 
 ![아이디 비밀번호 찾기3](https://user-images.githubusercontent.com/56354642/157621781-386ead6f-4db9-4ec8-90d2-381f8c7bb283.PNG)
 
-### 4. 진료예약
+### 5. 진료예약
 
-#### 4-1. 일반예약
+#### 5-1. 일반예약
 ![진료예약 화면](https://user-images.githubusercontent.com/56354642/157622687-2572bd44-ccdd-4ebe-ac4b-58d6ae8362de.PNG)
-
 
 ![회원일반예약](https://user-images.githubusercontent.com/56354642/157630197-c11f08ef-59d9-48e9-8fe2-cb0f3e9f43be.PNG)
 
-
 ![비회원일반예약 ](https://user-images.githubusercontent.com/56354642/157622734-9bfa2fe9-b580-4477-a7db-83eb83e2ecc6.PNG)
-
 
 ![비회원일반예약조회](https://user-images.githubusercontent.com/56354642/157630755-c6bd99ba-2aa4-43f5-b493-66d6bfa0b719.PNG)
 
 ![일반예약 확인](https://user-images.githubusercontent.com/56354642/157625190-247c23e4-7b38-4a93-83f2-c11dc266faaf.PNG)
 
-#### 4-2. 동행서비스 예약
+#### 5-2. 동행서비스 예약
 
 
 ![비회원 동행서비스 예약](https://user-images.githubusercontent.com/56354642/157630876-5d21d947-8229-4876-a892-a030581bf88a.PNG)
