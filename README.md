@@ -157,7 +157,20 @@
 
 ![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157788392-5b68740f-80ca-4690-8832-ebd2c3421477.PNG)
 
-### 7. 관리자페이지
+
+### 7. 마이페이지
+진료이력 이미지 추가
+
+![마이페이지 문의건의 타임라인](https://user-images.githubusercontent.com/56354642/157789676-ca2b79cc-f0b7-4331-ac64-3860eb2f176a.PNG)
+
+![마이페이지 회원정보수정](https://user-images.githubusercontent.com/56354642/157789678-914eb9a5-8393-4218-b7ad-48b664c862ef.PNG)
+
+![마이페이지 회원탈퇴](https://user-images.githubusercontent.com/56354642/157789679-0d5e3d65-7e25-4327-a617-1c1d8d195f18.PNG)
+
+
+
+
+### 8. 관리자페이지
 
 ![관리자 공지사항 관리](https://user-images.githubusercontent.com/56354642/157787704-5cc0e7b5-b515-40ec-9695-1bdcb6163056.PNG)
 
@@ -168,7 +181,6 @@
 ![관리자 동행서비스 예약관리](https://user-images.githubusercontent.com/56354642/157787683-649c58e3-3eef-4091-a51f-d10f50040206.PNG)
 
 ![관리자 문의건의 관리](https://user-images.githubusercontent.com/56354642/157788405-20221c5f-0793-4777-bb82-956742f6df06.PNG)
-
 
 
 
