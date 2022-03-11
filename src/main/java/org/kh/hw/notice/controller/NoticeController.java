@@ -78,7 +78,7 @@ public class NoticeController {
 	// 관리자페이지 공지사항 상세보기
 	@RequestMapping(value = "/notice/addetail.kh", method = RequestMethod.GET)
 	public String noticeAdminDetailView(Model model, @RequestParam("noticeNo") Integer noticeNo) {
-		// 조회수 증가 - 비즈니스 로직
+		
 
 		// 비즈니스 로직
 		Notice notice = nService.printOneByNo(noticeNo);
