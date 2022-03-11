@@ -12,6 +12,7 @@
 		<result property="deptContents" column="DEPT_CONTENTS"></result>
 		<result property="prescription" column="PRESCRIPTION"></result>
 		<result property="charge" column="CHARGE"></result>
+		<result property="memberId" column="MEMBER_ID"></result>
 	</resultMap>
 	
 	<insert id="insertHistory" parameterType="History">
@@ -38,4 +39,9 @@
 		PRESCRIPTION = #{prescription}, CHARGE = #{charge}
 		WHERE RES_NO =#{resNo}
 	</update>
+	
+	<select id="selectHistoryById" resultMap="historyResultMap">
+	 	SELECT * FROM MHIS WHERE MEMBER_ID = #{memberId} 
+	</select>
+	
 </mapper>

@@ -45,15 +45,10 @@ public class HistoryStoreLogic implements HistoryStore{
 		return result;
 	}
 
-//	@Override
-//	public int updateMember(SqlSession sqlSession, History history) {
-//		int result = sqlSession.update("HistoryMapper.updateHistory", history);
-//		return result;
-//	}
-//
-//	@Override
-//	public int deleteMember(SqlSession sqlSession, String doctorId) {
-//		int result = sqlSession.delete("HistoryMapper.deleteHistory", doctorId);
-//		return result;
-//	}
+	@Override
+	public List<History> selectAllById(SqlSession sqlSession, String memberId) {
+		List<History> result = sqlSession.selectList("HistoryMapper.selectHistoryById", memberId);
+		return result;
+	}
+
 }

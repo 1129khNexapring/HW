@@ -11,8 +11,6 @@ import org.kh.hw.notice.domain.PageInfo;
 public interface HistoryService {
 
 	public int registerHistory(History history);
-//	public int modifyHistory(History history);
-//	public int removeHistory(String doctorId);
 
 	public History printOneByNo(String resNo);
 
@@ -23,4 +21,6 @@ public interface HistoryService {
 	public int updateHistory(SqlSession sqlSession, History history);
 
 	public int modifyHistory(History history);
+
+	public List<History> printAllById(String memberId);
 }

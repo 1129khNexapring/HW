@@ -111,14 +111,14 @@
 										</tr>
 									</thead>
 									<tbody>
-									<c:forEach items="" var="">
+									<c:forEach items="${hList}" var="history">
 											<tr class="space">
-												<td class="ta" id="deptDate">${qna.qnaDate }</td>
-												<td class="ta" id="department">${qna.qnaType }</td>
-												<td class="ta" id="doctor">${qna.qnaType }</td>
-												<td class="ta" id="deptContents"></td>
-												<td class="ta" id="prescription"></td>
-												<td class="ta" id="charge"></td>
+												<td class="ta" id="deptDate">${history.deptDate }</td>
+												<td class="ta" id="department">${history.department }</td>
+												<td class="ta" id="doctorId">${history.doctorId }</td>
+												<td class="ta" id="deptContents">${history.deptContents }</td>
+												<td class="ta" id="prescription">${history.prescription }</td>
+												<td class="ta" id="charge">${history.charge }</td>
 											</tr>
 										</c:forEach>										
 						</tbody>

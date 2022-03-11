@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.kh.hw.common.Pagination;
+import org.kh.hw.history.domain.History;
+import org.kh.hw.history.service.HistoryService;
 import org.kh.hw.member.domain.Member;
 import org.kh.hw.member.service.MemberService;
 import org.kh.hw.notice.domain.Notice;
 import org.kh.hw.notice.domain.PageInfo;
 import org.kh.hw.notice.service.NoticeService;
+import org.kh.hw.qna.domain.Qna;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +33,8 @@ public class MemberController {
 	private MemberService mService;
 	@Autowired
 	private NoticeService nService;
+	@Autowired
+	private HistoryService hService;
 	
 	// 회원가입 페이지로 이동
 	@RequestMapping(value="/member/JoinView.kh", method=RequestMethod.GET)
@@ -179,8 +184,16 @@ public class MemberController {
 		return String.valueOf(result);
 	}
 	
+	// 진료이력
 	@RequestMapping(value ="/mHistory.kh", method=RequestMethod.GET)
-	public String mHistory() {
-		return "member/mHistory";
+	public String qnaTimeline(
+            Model model
+            ,HttpSession session) {
+		String memberId = ((Member)session.getAttribute("loginUser")).getMemberId();
+         List<History> historyList = hService.printAllById(memberId);
+         if(historyList != null) {
+            model.addAttribute("hList", historyList);
+         }
+         return "member/mHistory";
 	}
 }

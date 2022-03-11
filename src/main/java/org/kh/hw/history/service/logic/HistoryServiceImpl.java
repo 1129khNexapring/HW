@@ -53,15 +53,11 @@ public class HistoryServiceImpl implements HistoryService {
 		return result;
 	}
 
-//	@Override
-//	public int modifyHistory(History history) {
-//		int result = hStore.updateMember(sqlSession, history);
-//		return result;
-//	}
-//
-//	@Override
-//	public int removeHistory(String doctorId) {
-//		int result = hStore.deleteMember(sqlSession, doctorId);
-//		return result;
-//	}
+	@Override
+	public List<History> printAllById(String memberId) {
+		List<History> result = hStore.selectAllById(sqlSession, memberId);
+		return result;
+	}
+
+
 }

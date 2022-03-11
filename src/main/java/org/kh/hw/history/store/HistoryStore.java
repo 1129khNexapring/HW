@@ -18,7 +18,7 @@ public interface HistoryStore {
 
 	public int updateHistory(SqlSession sqlSession, History history);
 
-//	public int updateMember(SqlSession sqlSession, History history);
-//
-//	public int deleteMember(SqlSession sqlSession, String doctorId);
+	public List<History> selectAllById(SqlSession sqlSession, String memberId);
+
+
 }
