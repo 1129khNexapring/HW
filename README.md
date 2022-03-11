@@ -27,7 +27,7 @@
 |Category | Detail |
 | ------- | ------ |
 | FrontEnd | HTML5, JS, CSS3, JQuery |
-| BackEnd  | java, Spring/JSP |
+| BackEnd  | Java(JDK 1.8), Spring/JSP |
 | OS       | Windows 10, 11 |
 | IDE      | Eclipse, Visual Studio Code |
 | Server   | Apatch Tomcat(v8.5) |
