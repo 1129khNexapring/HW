@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class QnaController {
-   
+   //gdsg
    @Autowired
    private QnaService qService;
    @RequestMapping(value="/qna/list.kh", method=RequestMethod.GET)
@@ -28,10 +28,10 @@ public class QnaController {
          Model model
          , @RequestParam(value="page", required=false) Integer page) {
       int currentPage = (page != null) ? page : 1;
-      // 비즈니스 로직 -> DB에서 전체 게시물 갯수 가져옴
+      // 鍮꾩쫰�땲�뒪 濡쒖쭅 -> DB�뿉�꽌 �쟾泥� 寃뚯떆臾� 媛��닔 媛��졇�샂
       int totalCount = qService.getListCount();
       PageInfo pi = QnaPagenation.getPageInfo(currentPage, totalCount);
-      // 비즈니스 로직 -> DB에서 데이터를 가져와야 함
+      // 鍮꾩쫰�땲�뒪 濡쒖쭅 -> DB�뿉�꽌 �뜲�씠�꽣瑜� 媛��졇���빞 �븿
       List<Qna> qList = qService.printAll(pi);
       model.addAttribute("qList", qList);
       model.addAttribute("pi", pi);
@@ -42,15 +42,15 @@ public class QnaController {
    public String qnaDetailView(
          Model model
          , @RequestParam("qnaNo") Integer qnaNo) {
-      // 조회수 증가 - 비즈니스 로직
+      // 議고쉶�닔 利앷� - 鍮꾩쫰�땲�뒪 濡쒖쭅
       qService.updateCount(qnaNo);
-      // 비즈니스 로직
+      // 鍮꾩쫰�땲�뒪 濡쒖쭅
       Qna qna = qService.printOneByNo(qnaNo);
       if(qna != null) {
          model.addAttribute("qna", qna);
          return "qna/qnaDetailView";
       }else {
-         model.addAttribute("msg", "게시글 조회 실패");
+         model.addAttribute("msg", "寃뚯떆湲� 議고쉶 �떎�뙣");
          return "common/errorPage";
       }
    }
@@ -70,7 +70,7 @@ public class QnaController {
          if(result > 0) {
             return "redirect:/qna/list.kh";
          }else {
-            model.addAttribute("msg", "게시글 등록 실패!");
+            model.addAttribute("msg", "寃뚯떆湲� �벑濡� �떎�뙣!");
             return "common/errorPage";
          }
       }catch(Exception e) {
@@ -79,7 +79,7 @@ public class QnaController {
       }
    }
    
-   //게시글 삭제
+   //寃뚯떆湲� �궘�젣
    @RequestMapping(value="/qna/remove.kh", method=RequestMethod.GET)
    public String qnaRemove(
          Model model
@@ -90,7 +90,7 @@ public class QnaController {
             
             return "redirect:/qna/list.kh";
          }else {
-            model.addAttribute("msg", "게시글 삭제 실패");
+            model.addAttribute("msg", "寃뚯떆湲� �궘�젣 �떎�뙣");
             return "common/errorPage";
          }
       }catch(Exception e) {
@@ -108,11 +108,11 @@ public class QnaController {
             model.addAttribute("qna", qna);
             return "qna/qnaUpdateForm";
          } else {
-            model.addAttribute("msg", "게시글 조회 실패");
+            model.addAttribute("msg", "寃뚯떆湲� 議고쉶 �떎�뙣");
             return "common/errorPage";
          }
       }
-   	// 게시글 수정
+   	// 寃뚯떆湲� �닔�젙
       @RequestMapping(value = "/qna/modify.kh", method = RequestMethod.POST)
       public String qnaModify(@RequestParam("qnaNo") Integer qnaNo, Model model, @ModelAttribute Qna qna) {
 
@@ -121,7 +121,7 @@ public class QnaController {
             if (result > 0) {
                return "redirect:/qna/list.kh";
             } else {
-               model.addAttribute("msg", "게시글 수정 실패");
+               model.addAttribute("msg", "寃뚯떆湲� �닔�젙 �떎�뙣");
                return "common/errorPage";
             }
          } catch (Exception e) {
@@ -130,7 +130,7 @@ public class QnaController {
          }
 
       }
-    //비밀번호 페이지 (일반회원만 보이게)
+    //鍮꾨�踰덊샇 �럹�씠吏� (�씪諛섑쉶�썝留� 蹂댁씠寃�)
       @RequestMapping(value="/qna/pwInputView.kh", method=RequestMethod.GET)
       public String qnaInputView(
             Model model
@@ -147,7 +147,7 @@ public class QnaController {
         }
       }
     
-    //비밀번호 입력
+    //鍮꾨�踰덊샇 �엯�젰
       @RequestMapping(value="/qna/pwInputForm.kh", method=RequestMethod.GET)
       public String memberJoinView(Model model
             ,@RequestParam("qnaNo") Integer qnaNo
@@ -163,12 +163,12 @@ public class QnaController {
                model.addAttribute("qna", qnaUser);
                return "/qna/qnaDetailView";
             } else {
-               model.addAttribute("msg", "게시글 조회 실패");
+               model.addAttribute("msg", "寃뚯떆湲� 議고쉶 �떎�뙣");
                return "common/errorPage";
             }
       }
       
-      //관리자 답변등록
+      //愿�由ъ옄 �떟蹂��벑濡�
       @RequestMapping(value="/qna/adminRegister.kh", method=RequestMethod.POST)
       public String adminQnaRegister(
             Model model
@@ -179,7 +179,7 @@ public class QnaController {
             if(result > 0) {
                return "redirect:/qna/adlist.kh";
             }else {
-               model.addAttribute("msg", "게시글 등록 실패!");
+               model.addAttribute("msg", "寃뚯떆湲� �벑濡� �떎�뙣!");
                return "common/errorPage";
             }
          }catch(Exception e) {
@@ -193,10 +193,10 @@ public class QnaController {
             Model model
             , @RequestParam(value="page", required=false) Integer page) {
          int currentPage = (page != null) ? page : 1;
-         // 비즈니스 로직 -> DB에서 전체 게시물 갯수 가져옴
+         // 鍮꾩쫰�땲�뒪 濡쒖쭅 -> DB�뿉�꽌 �쟾泥� 寃뚯떆臾� 媛��닔 媛��졇�샂
          int totalCount = qService.getListCount();
          PageInfo pi = QnaPagenation.getPageInfo(currentPage, totalCount);
-         // 비즈니스 로직 -> DB에서 데이터를 가져와야 함
+         // 鍮꾩쫰�땲�뒪 濡쒖쭅 -> DB�뿉�꽌 �뜲�씠�꽣瑜� 媛��졇���빞 �븿
          List<Qna> qList = qService.printAll(pi);
          model.addAttribute("qList", qList);
          model.addAttribute("pi", pi);
@@ -207,20 +207,20 @@ public class QnaController {
       public String adminQnaDetailView(
             Model model
             , @RequestParam("qnaNo") Integer qnaNo) {
-         // 조회수 증가 - 비즈니스 로직
+         // 議고쉶�닔 利앷� - 鍮꾩쫰�땲�뒪 濡쒖쭅
          qService.updateCount(qnaNo);
-         // 비즈니스 로직
+         // 鍮꾩쫰�땲�뒪 濡쒖쭅
          Qna qna = qService.printOneByNo(qnaNo);
          if(qna != null) {
             model.addAttribute("qna", qna);
             return "qna/adminDetailView";
          }else {
-            model.addAttribute("msg", "게시글 조회 실패");
+            model.addAttribute("msg", "寃뚯떆湲� 議고쉶 �떎�뙣");
             return "common/errorPage";
          }
       }
       
-      //문의 건의타임라인 
+      //臾몄쓽 嫄댁쓽���엫�씪�씤 
       @RequestMapping(value="/qna/Timeline.kh", method=RequestMethod.GET)
       public String qnaTimeline(
             Model model
@@ -231,7 +231,7 @@ public class QnaController {
          }
          return "qna/qnaTimeline";
       }
-      // 게시글 수정
+      // 寃뚯떆湲� �닔�젙
       @RequestMapping(value = "/qna/adUpdate.kh", method = RequestMethod.GET)
       public String adminUpdateView(Model model, @RequestParam("qnaNo") Integer qnaNo) {
 
@@ -240,7 +240,7 @@ public class QnaController {
             model.addAttribute("qna", qna);
             return "qna/adminUpdateForm";
          } else {
-            model.addAttribute("msg", "게시글 조회 실패");
+            model.addAttribute("msg", "寃뚯떆湲� 議고쉶 �떎�뙣");
             return "common/errorPage";
          }
       }
@@ -253,7 +253,7 @@ public class QnaController {
             if (result > 0) {
                return "redirect:/qna/adlist.kh";
             } else {
-               model.addAttribute("msg", "게시글 수정 실패");
+               model.addAttribute("msg", "寃뚯떆湲� �닔�젙 �떎�뙣");
                return "common/errorPage";
             }
          } catch (Exception e) {
