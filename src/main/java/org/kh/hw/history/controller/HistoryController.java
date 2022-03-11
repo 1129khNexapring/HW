@@ -46,7 +46,7 @@ public class HistoryController {
 		}
 	}
 
-	// 리스트 볼 수 있음
+	// 목록 페이지
 	@RequestMapping(value = "/historyList.kh", method = RequestMethod.GET)
 	public String historyShowList(Model model, @RequestParam(value = "page", required = false) Integer page) {
 		int currentPage = (page != null) ? page : 1;
@@ -66,7 +66,7 @@ public class HistoryController {
 		}
 	}
 
-	// 상세 보기
+	// 목록 상세 보기
 	@RequestMapping(value = "/history/detail.kh", method = RequestMethod.GET)
 	public String historyHistoryView(Model model, @RequestParam("resNo") String resNo) {
 		// 비즈니스 로직
@@ -80,7 +80,7 @@ public class HistoryController {
 		}
 	}
 
-	// 등록 뷰
+	// 등록 페이지 이동
 	@RequestMapping(value = "historyGo.kh", method = RequestMethod.GET)
 	public String historyHistoryGo() {
 		return "history/history";
