@@ -147,9 +147,19 @@
 
 ### 6. 고객센터
 
-![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157776383-9e5d4e4b-00a1-4458-91e1-e58702bf7828.PNG)
+![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157787667-73b90c74-6e5f-4beb-9c3e-704c1d330972.PNG)
 
-![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157776386-41b57d6f-6c15-4643-9cc9-c2284b25d3b9.PNG)
+![고객센터 공지사항 관리1](https://user-images.githubusercontent.com/56354642/157787704-5cc0e7b5-b515-40ec-9695-1bdcb6163056.PNG)
+
+![고객센터 일반예약 관리](https://user-images.githubusercontent.com/56354642/157787675-3bdfa4c8-5cb8-4554-bac5-6127a8cc1127.PNG)
+
+![고객센터 동행서비스 예약관리](https://user-images.githubusercontent.com/56354642/157787683-649c58e3-3eef-4091-a51f-d10f50040206.PNG)
+
+![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157788392-5b68740f-80ca-4690-8832-ebd2c3421477.PNG)
+
+![고객센터 문의건의 2](https://user-images.githubusercontent.com/56354642/157788405-20221c5f-0793-4777-bb82-956742f6df06.PNG)
+
+
 
 
 ## Document
