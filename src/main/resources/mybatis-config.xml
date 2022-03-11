@@ -14,6 +14,7 @@
 		<typeAlias type="org.kh.hw.qna.domain.Qna" alias="Qna"/>
 		<typeAlias type="org.kh.hw.reservation.domain.Reservation" alias="Reservation"/>
 		<typeAlias type="org.kh.hw.reservation.domain.Res" alias="Res"/>
+		<typeAlias type="org.kh.hw.history.domain.History" alias="History"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml"/>
@@ -22,5 +23,6 @@
 		<mapper resource="mappers/qna-mapper.xml"/>
 		<mapper resource="mappers/reservation-mapper.xml"/>
 		<mapper resource="mappers/res-mapper.xml"/>
+		<mapper resource="mappers/history-mapper.xml"/>
 	</mappers>
 </configuration>
