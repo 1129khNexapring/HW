@@ -155,6 +155,8 @@
 
 ![관리자 공지사항 관리](https://user-images.githubusercontent.com/56354642/157787704-5cc0e7b5-b515-40ec-9695-1bdcb6163056.PNG)
 
+![관리자 공지사항관리2](https://user-images.githubusercontent.com/56354642/157789033-70c07c8a-960a-40a6-9065-11419c727d6b.PNG)
+
 ![관리자 일반예약 관리](https://user-images.githubusercontent.com/56354642/157787675-3bdfa4c8-5cb8-4554-bac5-6127a8cc1127.PNG)
 
 ![관리자 동행서비스 예약관리](https://user-images.githubusercontent.com/56354642/157787683-649c58e3-3eef-4091-a51f-d10f50040206.PNG)
