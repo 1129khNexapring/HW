@@ -145,6 +145,11 @@
 ![동행서비스 예약확인](https://user-images.githubusercontent.com/56354642/157632922-4edadf2d-89f9-4fca-b6fe-a6bc47125f1b.PNG)
 
 
+### 6. 고객센터
+
+![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157776383-9e5d4e4b-00a1-4458-91e1-e58702bf7828.PNG)
+
+![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157776386-41b57d6f-6c15-4643-9cc9-c2284b25d3b9.PNG)
 
 
 ## Document
