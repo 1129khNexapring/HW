@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>문의/건의 타임라인</title>
+<title>진료이력</title>
 <link rel="stylesheet" href="/resources/qna/qnaTimeline.css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -35,7 +35,7 @@
 </style>
 </head>
 <body>
-	<div id="header">
+<div id="header">
 		<!-- 로그인, 회원가입 부분 -->
 		<!-- gnb = global navigation bar  -->
 		<div id="gnb">
@@ -56,8 +56,7 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- local navigation bar -->
+		<!-- local navigation bar -->
 	<div id="lnb">
 		<div class="inner lnb_nav">
 			<h1>
@@ -88,7 +87,7 @@
 						<div class="cate_name">마이페이지</div>
 					</div>
 					<ul class="snb_nav">
-						<li><a href="/mHistory.kh" class="link_sb1">진료이력</a></li>
+						<li><a href="#" class="link_sb1">진료이력</a></li>
     					<li><a href="/qna/Timeline.kh?qnaWriter=${loginUser.memberId }" class="link_sb1" id="point">문의/건의 타임라인</a></li>
 						<li><a href="/member/myInfo.kh" class="link_sb1">회원정보수정</a></li>
 						<li><a href="/member/delete.kh" class="link_sb1">회원 탈퇴 </a></li>
@@ -96,44 +95,42 @@
 				</div>
 				<div id="content_box">
 					<div class="notice_page_title">
-						<h2 class="tit_page">문의/건의 타임라인</h2>
+						<h2 class="tit_page">진료이력</h2>
 					</div>
-						<div class="section">
+					<div class="section">
 							<div class="bbs">
 								<table>
 									<thead>
 										<tr>
-											<th>날짜</th>
-											<th>유형</th>
-											<th>제목</th>
-											<th>답변유무</th>
+											<th>진료일</th>
+											<th>진료과</th>
+											<th>의료진</th>
+											<th>진료내용</th>
+											<th>약 처방 내용</th>
+											<th>청구 금액(원)</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${qList }" var="qna">
-											<c:url var="qDetail" value="/qna/detail.kh">
-												<c:param name="qnaNo" value="${qna.qnaNo }"></c:param>
-											</c:url>
+									<c:forEach items="" var="">
 											<tr class="space">
-												<td class="ta" id="date">${qna.qnaDate }</td>
-												<td class="ta" id="type">${qna.qnaType }</td>
-												<td style="text-align: center;" id="title"><a href="${qDetail }" class="title">${qna.qnaTitle }</a></td>
-												<td class="ta" id="status"><c:if test="${qna.qnaStatus eq 'Y' }">
-                     답변완료 
-                     </c:if> <c:if test="${qna.qnaStatus eq 'N' }">
-                     답변대기 
-                     </c:if></td>
+												<td class="ta" id="deptDate">${qna.qnaDate }</td>
+												<td class="ta" id="department">${qna.qnaType }</td>
+												<td class="ta" id="doctor">${qna.qnaType }</td>
+												<td class="ta" id="deptContents"></td>
+												<td class="ta" id="prescription"></td>
+												<td class="ta" id="charge"></td>
 											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-									
+										</c:forEach>										
+						</tbody>
+					</table>						
+				</div>
 				</div>
 				</div>
 				</div>
 			</div>
 		</div>
 		</div>
+</body>
 <footer>
 	<div class="footer_tit">서울특별시 중구 남대문로 120 대일빌딩 2F, 3F (T: 1544-9970) / F: 02-722-0858)</div>
 	<div id="footer_bottom">Copyright ⓒ 1988-2022 HW Hospital All Right Reserved</div>

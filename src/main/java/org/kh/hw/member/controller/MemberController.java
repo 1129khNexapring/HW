@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+//컨트롤러ㅇㅇㅇ
 @Controller
 public class MemberController {
 	
@@ -176,5 +177,10 @@ public class MemberController {
 			@RequestParam("memberId") String memberId) {
 		int result = mService.checkIdDup(memberId);
 		return String.valueOf(result);
+	}
+	
+	@RequestMapping(value ="/mHistory.kh", method=RequestMethod.GET)
+	public String mHistory() {
+		return "member/mHistory";
 	}
 }
