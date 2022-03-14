@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.kh.hw.common.Pagination;
+import org.kh.hw.doctor.domain.Doctor;
+import org.kh.hw.doctor.service.DoctorService;
 import org.kh.hw.member.domain.Member;
 import org.kh.hw.notice.domain.Notice;
 import org.kh.hw.notice.domain.PageInfo;
@@ -22,6 +24,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 
 
@@ -31,13 +36,33 @@ public class ResController {
 	@Autowired
 	private ResService rService;
 	@Autowired
-	private NoticeService nService;
+	private DoctorService dService;
 	
 	// 일반 예약 페이지로 이동
 	@RequestMapping(value = "/res/JoinView.kh", method=RequestMethod.GET)
-	public String resJoinView(HttpServletRequest request
+	public String resJoinView(Model model
 			, @ModelAttribute Res reservation) throws UnsupportedEncodingException {
-		return "res/reservation";
+		// 진료과 정보 가져오기
+		List<String> sList = dService.printAllDpt();
+		if (!sList.isEmpty()) {
+			model.addAttribute("sList", sList);
+			return "res/reservation";	
+		} else {
+			model.addAttribute("msg", "진료과 조회 실패");
+			return "common/errorPage";
+		}
+	}
+	
+	// 진료과 선택 시 의사 정보 가져오기
+	@ResponseBody
+	@RequestMapping(value = "/res/JoinViewDoctor.kh", method=RequestMethod.GET, produces="application/json;charset=utf-8")
+	public String resJoinViewDoctor(Model model
+			, @RequestParam("doctorDpt") String doctorDpt) throws UnsupportedEncodingException {
+		List<Doctor> dList = dService.printAll(doctorDpt);
+		if(!dList.isEmpty()) {
+			return new Gson().toJson(dList);
+		}
+		return null;
 	}
 	
 	// 일반 예약 등록 실행(비회원)
@@ -70,8 +95,8 @@ public class ResController {
 		int result = rService.registerResId(reservation);
 		if(result > 0) {
 			HttpSession session = request.getSession();
-			String resMemId = ((Member)(session.getAttribute("loginUser"))).getMemberId();
-			Res reservationOne =  rService.printRes(resMemId);
+			String memberId = ((Member)(session.getAttribute("loginUser"))).getMemberId();
+			Res reservationOne =  rService.printRes(memberId);
 			if(reservationOne != null) {
 				model.addAttribute("reservation", reservationOne);
 			return "res/reservationViewId";
@@ -122,8 +147,8 @@ public class ResController {
 			  @ModelAttribute Res reservation, HttpServletRequest request) throws UnsupportedEncodingException {
 		try {
 			HttpSession session = request.getSession();
-			String resMemId = ((Member)(session.getAttribute("loginUser"))).getMemberId();
-			Res reservationOne =  rService.printRes(resMemId);
+			String memberId = ((Member)(session.getAttribute("loginUser"))).getMemberId();
+			Res reservationOne =  rService.printRes(memberId);
 			if(reservationOne != null) {
 				model.addAttribute("reservation", reservationOne);
 				return "res/reservationViewId";	

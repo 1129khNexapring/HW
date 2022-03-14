@@ -29,4 +29,10 @@
 	<select id="checkIdDup" parameterType="Doctor" resultType="_int">
 		SELECT COUNT(*) FROM DOCTOR WHERE DOCTOR_ID = #{doctorId}
 	</select>
+	<select id="selectAllDpt" resultType="String">
+		SELECT DISTINCT DOCTOR_DPT FROM DOCTOR ORDER BY 1
+	</select>
+	<select id="selectAll" parameterType="Doctor" resultMap="doctorResultMap">
+		SELECT * FROM DOCTOR WHERE DOCTOR_DPT = #{doctorDpt}
+	</select>
 </mapper>

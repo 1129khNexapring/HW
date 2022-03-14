@@ -19,7 +19,7 @@ public class HistoryServiceImpl implements HistoryService {
 
 	@Override
 	public int registerHistory(History history) {
-		int result = hStore.insertMember(sqlSession, history);
+		int result = hStore.insertHistory(sqlSession, history);
 		return result;
 	}
 
@@ -36,26 +36,20 @@ public class HistoryServiceImpl implements HistoryService {
 	}
 
 	@Override
-	public List<History> printAll(PageInfo pi) {
-		List<History> hList = hStore.selectAll(sqlSession, pi);
+	public List<History> printAll(PageInfo pi, String doctorId) {
+		List<History> hList = hStore.selectAll(sqlSession, pi, doctorId);
 		return hList;
-	}
-
-	@Override
-	public int modifyHistory(History history) {
-		int result = hStore.updateHistory(sqlSession, history);
-		return result;
-	}
-
-	@Override
-	public int updateHistory(SqlSession sqlSession, History history) {
-		int result = sqlSession.delete("HistoryMapper.deleteHistory", history);
-		return result;
 	}
 
 	@Override
 	public List<History> printAllById(String memberId) {
 		List<History> result = hStore.selectAllById(sqlSession, memberId);
+		return result;
+	}
+
+	@Override
+	public int removeHistory(String resNo) {
+		int result = hStore.deleteHistory(sqlSession, resNo);
 		return result;
 	}
 

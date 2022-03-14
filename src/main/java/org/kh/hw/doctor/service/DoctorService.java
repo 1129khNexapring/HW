@@ -22,4 +22,8 @@ public interface DoctorService {
 	public List<Doctor> find_doc_pwd(HttpServletResponse response, Doctor doctor) throws IOException;
 
 	public int checkIdDup(String doctorId); // 아이디 중복 확인
+
+	public List<String> printAllDpt();
+
+	public List<Doctor> printAll(String doctorDpt);
 }

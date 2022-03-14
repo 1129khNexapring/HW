@@ -51,4 +51,16 @@ public class DoctorStoreLogic implements DoctorStore{
 		int result = session.selectOne("DoctorMapper.checkIdDup", doctorId);
 		return result;
 	}
+
+	@Override
+	public List<String> selectAllDpt(SqlSession sqlSession) {
+		List<String> dpt = sqlSession.selectList("DoctorMapper.selectAllDpt");
+		return dpt;
+	}
+
+	@Override
+	public List<Doctor> selectAll(SqlSession sqlSession, String doctorDpt) {
+		List<Doctor> dList = sqlSession.selectList("DoctorMapper.selectAll", doctorDpt);
+		return dList;
+	}
 }

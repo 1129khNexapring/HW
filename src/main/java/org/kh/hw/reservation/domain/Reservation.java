@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class Reservation {
 	
-	private String tresNo;
-	private String tresMemId;
+	private String resNo;
+	private String memberId;
 	private String department;
 	private String deptStaff;
 	private String resName;
@@ -17,23 +17,25 @@ public class Reservation {
 	private String acc;
 	private String fileName;
 	private String fileRename;
+	private String doctorId;
+	private String status;
 	
 	public Reservation() {}
 
-	public String getTresNo() {
-		return tresNo;
+	public String getResNo() {
+		return resNo;
 	}
 
-	public void setTresNo(String tresNo) {
-		this.tresNo = tresNo;
+	public void setResNo(String resNo) {
+		this.resNo = resNo;
 	}
 
-	public String getTresMemId() {
-		return tresMemId;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setTresMemId(String tresMemId) {
-		this.tresMemId = tresMemId;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getDepartment() {
@@ -124,12 +126,28 @@ public class Reservation {
 		this.fileRename = fileRename;
 	}
 
+	public String getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(String doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
-		return "Reservation [tresNo=" + tresNo + ", tresMemId=" + tresMemId + ", department=" + department
-				+ ", deptStaff=" + deptStaff + ", resName=" + resName + ", deptDate=" + deptDate + ", deptTime="
-				+ deptTime + ", birth=" + birth + ", phone=" + phone + ", address=" + address + ", acc=" + acc
-				+ ", fileName=" + fileName + ", fileRename=" + fileRename + "]";
+		return "Reservation [resNo=" + resNo + ", memberId=" + memberId + ", department=" + department + ", deptStaff="
+				+ deptStaff + ", resName=" + resName + ", deptDate=" + deptDate + ", deptTime=" + deptTime + ", birth="
+				+ birth + ", phone=" + phone + ", address=" + address + ", acc=" + acc + ", fileName=" + fileName
+				+ ", fileRename=" + fileRename + ", doctorId=" + doctorId + ", status=" + status + "]";
 	}
 
 }

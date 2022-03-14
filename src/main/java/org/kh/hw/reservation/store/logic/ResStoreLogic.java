@@ -4,10 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
-import org.kh.hw.member.domain.Member;
 import org.kh.hw.reservation.domain.PageInfo;
 import org.kh.hw.reservation.domain.Res;
-import org.kh.hw.reservation.domain.Reservation;
 import org.kh.hw.reservation.store.ResStore;
 import org.springframework.stereotype.Repository;
 @Repository 
@@ -32,8 +30,8 @@ public class ResStoreLogic implements ResStore {
 	}
 
 	@Override
-	public Res selectOneByRes(SqlSession sqlSession, String resMemId) {
-		Res reservationOne = sqlSession.selectOne("ResMapper.selectOneByRes", resMemId);
+	public Res selectOneByRes(SqlSession sqlSession, String memberId) {
+		Res reservationOne = sqlSession.selectOne("ResMapper.selectOneByRes", memberId);
 		return reservationOne;
 	}
 
@@ -57,6 +55,30 @@ public class ResStoreLogic implements ResStore {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		List<Res> rList = sqlSession.selectList("ResMapper.selectAllList", pi, rowBounds);
 		return rList;
+	}
+
+	@Override
+	public List<String> selectAllList(SqlSession sqlSession, String doctorId) {
+		List<String> rList = sqlSession.selectList("ResMapper.selectResAll", doctorId);
+		return rList;
+	}
+
+	@Override
+	public Res selectOne(SqlSession sqlSession, String resNo) {
+		Res reservationOne = sqlSession.selectOne("ResMapper.selectOne", resNo);
+		return reservationOne;
+	}
+
+	@Override
+	public int updateStatus(SqlSession sqlSession, String resNo) {
+		int update = sqlSession.update("ResMapper.updateStatus", resNo);
+		return update;
+	}
+
+	@Override
+	public int removeStatus(SqlSession sqlSession, String resNo) {
+		int update = sqlSession.update("ResMapper.deleteStatus", resNo);
+		return update;
 	}
 
 }

@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-//컨트롤러ㅇㅇㅇ
 @Controller
 public class MemberController {
 	
@@ -185,7 +184,7 @@ public class MemberController {
 	}
 	
 	// 진료이력
-	@RequestMapping(value ="/mHistory.kh", method=RequestMethod.GET)
+	@RequestMapping(value ="/member/history.kh", method=RequestMethod.GET)
 	public String qnaTimeline(
             Model model
             ,HttpSession session) {
@@ -194,6 +193,6 @@ public class MemberController {
          if(historyList != null) {
             model.addAttribute("hList", historyList);
          }
-         return "member/mHistory";
+         return "member/memberHistory";
 	}
 }

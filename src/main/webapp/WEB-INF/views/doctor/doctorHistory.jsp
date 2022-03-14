@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,72 +9,36 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="/resources/head.css">
 <link rel="stylesheet" href="/resources/footer.css">
-<title>회원 탈퇴</title>
+<link rel="stylesheet" href="/resources/notice/notice-admin-list.css">
+<title>진료 이력</title>
 <style>
-	.all {
-		padding-left: 300px;
-		padding-top: 60px;
-	}
-	p {
-        	margin-top: 30px;
-            width: 700px;
-            font-size: 25px;
-            padding-left: 40px;
-        }
-    .section {
-    	padding: 0 30px;
-    	width: 600px;
-    	height: 150px;
-    	board-bottom: 1px solid #b2bfca;
-    }
-    	.section-img{
-    		width: 30%;
-    		height: 10px;
-    		float: left;
-    	}
-    	img {
-    		width: 150px;
-    		height: 150px;
-    	}
-    	.section-text{
-    		padding-top: 12px;
-    		width: 70%;
-    		font-size: 30px;
-    		float: left;
-    	}
-        .form_table {
-        	margin-left: 20px;
-            position: relative;
-            width: 500px;
-            height: 200px;
-            padding: 20px;
-        }
-            .form_table tr {
-                height: 50px;
-            }
-            .td_left {
-                width: 200px;
-            }
-            .form_table .input {
-                height: 40px;
-                width: 300px;
-                border: 1px solid #b2bfca;
-                border-radius: 5px;
-                padding-left: 10px;
-            }
-            .btn {
-                margin-top: 20px;
-                width: 120px;
-                height: 42px;
-                color: #fff;
-                background-color: rgb(14, 74, 129);
-                border: 1px;
-                border-radius: 5px;
-                font-size: 15px;
+        a {
+		    color: black;
+		    cursor: pointer;
+		    text-decoration: none;
+		}
+		#c1 {
+			width: 50px;
+		}
+		#c2 {
+			width: 100px;
+		}
+		#c3 {
+			width: 100px;
+		}
+		#c4 {
+			width: 250px;
+		}
+		#c5 {
+			width: 250px;
+		}
+		#c6 {
+			width: 100px;
+		}
 </style>
 </head>
 <body>
-	<div id="header">
+<div id="header">
         <!-- 로그인, 회원가입 부분 -->
         <!-- gnb = global navigation bar  -->
         <div id="gnb">   
@@ -87,7 +51,7 @@
                     로그인
                 </a>
                </c:if>
-            <c:if test="${loginUser ne null }">
+            <c:if test="${loginUser ne null}">
                 <a href="/logout.kh" class="btn_gnb_logout">
                     <span class="material-icons">
                         lock_open
@@ -95,7 +59,7 @@
                     로그아웃
                 </a>
                </c:if>
-            <c:if test="${loginDt ne null }">
+               <c:if test="${loginDt ne null }">
                 <a href="/logout.kh" class="btn_gnb_logout">
                     <span class="material-icons">
                         lock_open
@@ -145,61 +109,102 @@
 			<div class="inner2">
 				<div id="snb">
 					<div class="tit_snb">
-        				<div class="cate_name">마이페이지</div>
+        				<div class="cate_name">진료 이력</div>
     				</div>	
     				<ul class="snb_nav">
-    					<li><a href="/doctor/history.kh" class="link_sb1">진료 이력</a></li>
+    					<li><a href="/doctor/history.kh" class="link_sb1" id="point">진료 이력</a></li>
     					<li><a href="/doctor/myInfo.kh" class="link_sb1">회원정보수정</a></li>
-    					<li><a href="/doctor/delete.kh" class="link_sb1" id="point">회원 탈퇴</a></li>
+    					<li><a href="/doctor/delete.kh" class="link_sb1">회원 탈퇴</a></li>
     				</ul>
 			  </div>
 			 <div id="content_box">
 				<div class="notice_page_title">
-					<h2 class="tit_page">회원 탈퇴</h2>		
+					<h2 class="tit_page">진료 이력</h2>		
 				</div>
-	<p>회원탈퇴</p>
-	<div class=all>
-		<div class="section">
-			<div class="section-img">
-				<img src="/resources/img/warning.png" alt="주의">
-			</div>
-			<div class="section-text">
-				회원 탈퇴 시 HW병원<br>
-				서비스 내 모든 개인정보<br>
-				복구가 불가능합니다.
-			</div>
-		</div>
-		<div class="form_table">
-			<form action="/doctor/remove.kh" method="post">
-				<table>
-					<tr>
-						<td class="td_left">아이디</td>
-						<td class="td_right">
-							<input type="text" name="doctorId" value="${loginDt.doctorId }" class="input">
-						</td>
-					</tr>
-					<tr>
-						<td class="td_left">비밀번호</td>
-						<td class="td_right">
-							<input type="password" name="doctorPw" placeholder="비밀번호를 입력해주세요" value="" class="input">
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center">
-							<input type="submit" class="btn" value="회원탈퇴">
-						</td>
-					</tr>
-				</table>
-			</form>
-		</div>
+				<div class="section">
+				<div class="bbs">	
+					<table>
+						<thead>
+							<tr>
+								<th>예약번호</th>
+								<th>진료일</th>
+								<th>환자명</th>
+								<th>진료 내용</th>
+								<th>약 처방 내용</th>
+								<th>청구 금액(원)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${hList}" var="history">
+								<tr class="space">
+									<c:url var="hDetail" value="/history/oneView.kh">
+										<c:param name="resNo" value="${history.resNo}"></c:param>
+									</c:url>
+									<td class="ta" id="c1"><a href="${hDetail}">${history.resNo}</a></td>
+									<td class="ta" id="c2">${history.deptDate}</td>
+									<td class="ta" id="c3">${history.resName}</td>
+									<td class="ta" id="c4" style="white-space:pre;">${history.deptContents}</td>
+									<td class="ta" id="c5" style="white-space:pre;">${history.prescription}</td>
+									<td class="ta" id="c6">${history.charge}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+					<div class="register_btn">
+						<a href="/doctor/historyWriteView.kh" id="register_l">이력 등록</a>
+					</div>
+					<div class="paging">
+
+								<c:if test="${pi.startNavi ==1 }">
+
+									<a href="/doctor/history.kh?page=1"> <i
+										class="fas fa-angle-left">
+											<button class="on">
+									</i>
+									</button></a>
+
+								</c:if>
+								<c:if test="${pi.prev}">
+
+									<a href="/doctor/history.kh?page=${pi.startNavi-1}"> <i
+										class="fas fa-angle-left">
+											<button class="on">
+									</i>
+									</button>
+									</a>
+								</c:if>
+
+								<c:forEach var="p" begin="${pi.startNavi }" end="${pi.endNavi }">
+									<c:url var="pagination" value="/doctor/history.kh">
+										<c:param name="page" value="${p }"></c:param>
+									</c:url>
+
+									<a href="${pagination }"><button class="on1">${p }</button></a>&nbsp;
+																		
+									</c:forEach>
+
+
+								<c:if test="${pi.next && pi.endNavi > 0}">
+
+									<a href=/doctor/history.kh?page=${pi.endNavi+1}"> <i
+										class="fas fa-angle-right">
+											<button class="on2">
+									</i>
+									</button>
+									</a>
+
+								</c:if>
+
+							</div>
 	</div>
-</div>
-</div>
-</div>
-</div>
-<footer>
-	<div class="footer_tit">서울특별시 중구 남대문로 120 대일빌딩 2F, 3F (T: 1544-9970) / F: 02-722-0858)</div>
-	<div id="footer_bottom">Copyright ⓒ 1988-2022 HW Hospital All Right Reserved</div>
-</footer>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<footer>
+		<div class="footer_tit">서울특별시 중구 남대문로 120 대일빌딩 2F, 3F (T: 1544-9970) / F: 02-722-0858)</div>
+		<div id="footer_bottom">Copyright ⓒ 1988-2022 HW Hospital All Right Reserved</div>
+	</footer>
 </body>
 </html>

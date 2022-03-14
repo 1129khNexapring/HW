@@ -156,7 +156,7 @@
         				<div class="cate_name">마이페이지</div>
     				</div>	
     				<ul class="snb_nav">
-    					<li><a href="#" class="link_sb1">진료 이력</a></li>
+    					<li><a href="/doctor/history.kh" class="link_sb1">진료 이력</a></li>
     					<li><a href="/doctor/myInfo.kh" class="link_sb1" id="point">회원정보수정</a></li>
     					<li><a href="/doctor/delete.kh" class="link_sb1">회원 탈퇴</a></li>
     				</ul>

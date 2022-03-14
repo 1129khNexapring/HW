@@ -148,7 +148,7 @@
         				<div class="cate_name">마이페이지</div>
     				</div>	
     				<ul class="snb_nav">
-    					<li><a href="#" class="link_sb1">진료이력</a></li>
+    					<li><a href="/member/history.kh" class="link_sb1">진료이력</a></li>
     					<li><a href="/qna/Timeline.kh?qnaWriter=${loginUser.memberId }" class="link_sb1">문의/건의 타임라인</a></li>
     					<li><a href="/member/myInfo.kh" class="link_sb1">회원정보수정</a></li>
     					<li><a href="/member/delete.kh" class="link_sb1" id="point">회원 탈퇴</a></li>

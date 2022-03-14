@@ -20,4 +20,8 @@ public interface DoctorStore {
 	public List<Doctor> find_doc_pwd(Doctor doctor, SqlSession sqlSession);
 
 	public int checkIdDup(SqlSession session, String doctorId); // 아이디 중복 확인
+
+	public List<String> selectAllDpt(SqlSession sqlSession);
+
+	public List<Doctor> selectAll(SqlSession sqlSession, String doctorDpt);
 }

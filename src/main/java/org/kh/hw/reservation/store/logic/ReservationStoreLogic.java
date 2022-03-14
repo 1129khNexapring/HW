@@ -37,8 +37,8 @@ public class ReservationStoreLogic implements ReservationStore{
 	}
 
 	@Override
-	public Reservation selectOneByRes(SqlSession sqlSession, String tresMemId) {
-		Reservation reservationOne = sqlSession.selectOne("ReservationMapper.selectOneByRes", tresMemId);
+	public Reservation selectOneByRes(SqlSession sqlSession, String memberId) {
+		Reservation reservationOne = sqlSession.selectOne("ReservationMapper.selectOneByRes", memberId);
 		return reservationOne;
 	}
 
@@ -56,6 +56,30 @@ public class ReservationStoreLogic implements ReservationStore{
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		List<Reservation> rList = sqlSession.selectList("ReservationMapper.selectAllList", pi, rowBounds);
 		return rList;
+	}
+
+	@Override
+	public List<String> selectAllList(SqlSession sqlSession, String doctorId) {
+		List<String> wList = sqlSession.selectList("ReservationMapper.selectReservationAll", doctorId);
+		return wList;
+	}
+
+	@Override
+	public Reservation selectOne(SqlSession sqlSession, String resNo) {
+		Reservation reservationOne = sqlSession.selectOne("ReservationMapper.selectOne", resNo);
+		return reservationOne;
+	}
+
+	@Override
+	public int updateStatus(SqlSession sqlSession, String resNo) {
+		int update = sqlSession.update("ReservationMapper.updateStatus", resNo);
+		return update;
+	}
+
+	@Override
+	public int removeStatus(SqlSession sqlSession, String resNo) {
+		int update = sqlSession.update("ReservationMapper.deleteStatus", resNo);
+		return update;
 	}
 
 }
