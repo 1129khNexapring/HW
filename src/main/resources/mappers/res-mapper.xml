@@ -38,7 +38,7 @@
 		SELECT * FROM RES WHERE DEPT_DATE > SYSDATE - 1 ORDER BY DEPT_DATE DESC
 	</select>
 	<select id="selectResAll" resultType="String">
-		SELECT RES_NO FROM RES WHERE DOCTOR_ID = #{doctorId} AND STATUS = 'N'
+		SELECT RES_NO FROM RES WHERE DOCTOR_ID = #{doctorId} AND RES_MEMID IS NOT NULL AND STATUS = 'N'
 	</select>
 	<select id="selectOne" parameterType="Res" resultMap="resResultMap"> 
     	SELECT * FROM RES WHERE RES_NO = #{resNo}
