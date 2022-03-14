@@ -42,7 +42,7 @@
 		SELECT * FROM TRES WHERE DEPT_DATE > SYSDATE - 1 ORDER BY DEPT_DATE DESC
 	</select>
 	<select id="selectReservationAll" resultType="String">
-		SELECT TRES_NO FROM TRES WHERE DOCTOR_ID = #{doctorId} AND STATUS = 'N'
+		SELECT TRES_NO FROM TRES WHERE DOCTOR_ID = #{doctorId} AND TRES_MEMID IS NOT NULL AND STATUS = 'N'
 	</select>
 	<select id="selectOne" parameterType="Reservation" resultMap="reservationResultMap"> 
     	SELECT * FROM TRES WHERE TRES_NO = #{resNo}
