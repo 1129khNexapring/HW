@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Res {
 	private String resNo;
-	private String resMemId;
+	private String memberId;
 	private String resName;
 	private String birth;
 	private String phone;
@@ -12,6 +12,8 @@ public class Res {
 	private String deptStaff;
 	private Date deptDate;
 	private String deptTime;
+	private String doctorId;
+	private String status;
 	
 	public Res() {}
 
@@ -23,12 +25,12 @@ public class Res {
 		this.resNo = resNo;
 	}
 
-	public String getResMemId() {
-		return resMemId;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setResMemId(String resMemId) {
-		this.resMemId = resMemId;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getResName() {
@@ -87,11 +89,27 @@ public class Res {
 		this.deptTime = deptTime;
 	}
 
-	@Override
-	public String toString() {
-		return "Res [resNo=" + resNo + ", resMemId=" + resMemId + ", resName=" + resName + ", birth=" + birth
-				+ ", phone=" + phone + ", department=" + department + ", deptStaff=" + deptStaff + ", deptDate="
-				+ deptDate + ", deptTime=" + deptTime + "]";
+	public String getDoctorId() {
+		return doctorId;
 	}
 
+	public void setDoctorId(String doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Res [resNo=" + resNo + ", memberId=" + memberId + ", resName=" + resName + ", birth=" + birth
+				+ ", phone=" + phone + ", department=" + department + ", deptStaff=" + deptStaff + ", deptDate="
+				+ deptDate + ", deptTime=" + deptTime + ", doctorId=" + doctorId + ", status=" + status + "]";
+	}
+	
 }

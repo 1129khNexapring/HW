@@ -13,35 +13,26 @@
 		<result property="prescription" column="PRESCRIPTION"></result>
 		<result property="charge" column="CHARGE"></result>
 		<result property="memberId" column="MEMBER_ID"></result>
+		<result property="deptStaff" column="DEPT_STAFF"></result>
 	</resultMap>
-	
 	<insert id="insertHistory" parameterType="History">
-		INSERT INTO MHIS VALUES(#{doctorId}, SEQ_RES_NO.NEXTVAL, #{resName}, 
-		#{deptDate}, #{department}, #{deptContents}, #{prescription}, #{charge})
+		INSERT INTO MHIS VALUES(#{doctorId}, #{resNo}, #{resName}, #{deptDate}, #{department}, #{deptContents}, #{prescription}, #{charge}, #{memberId}, #{deptStaff})
 	</insert>
-	
 	<select id="selectListCount" resultType="_int">
 		<!-- 1개면 가져오면 resultType -->
 		SELECT COUNT(*) FROM MHIS
 	</select>
-	<select id="selectAllList" resultMap="historyResultMap">
+	<select id="selectAllList" parameterType="string" resultMap="historyResultMap">
 		<!-- 여러개 가져오면 resultType -->
-		SELECT * FROM MHIS ORDER BY RES_NO
+		SELECT * FROM MHIS WHERE DOCTOR_ID = #{doctorId} ORDER BY RES_NO
 	</select>
 	<select id="selectOneByNo" resultMap="historyResultMap">
 		SELECT * FROM MHIS WHERE RES_NO = #{resNo}
 	</select>
-	
-	<update id="updateHistory">
-		UPDATE MHIS SET 
-		DOCTOR_ID = #{doctorId}, RES_NAME = #{resName}, DEPT_DATE = #{deptDate}, 
-		DEPARTMENT = #{department}, DEPT_CONTENTS = #{deptContents}, 
-		PRESCRIPTION = #{prescription}, CHARGE = #{charge}
-		WHERE RES_NO =#{resNo}
-	</update>
-	
 	<select id="selectHistoryById" resultMap="historyResultMap">
 	 	SELECT * FROM MHIS WHERE MEMBER_ID = #{memberId} 
 	</select>
-	
+	<delete id="deleteHistory" parameterType="String">
+		DELETE FROM MHIS WHERE RES_NO = #{resNo}
+	</delete>
 </mapper>

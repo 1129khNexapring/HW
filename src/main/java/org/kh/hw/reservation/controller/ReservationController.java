@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
+import org.kh.hw.doctor.domain.Doctor;
+import org.kh.hw.doctor.service.DoctorService;
 import org.kh.hw.member.domain.Member;
 import org.kh.hw.member.service.MemberService;
 import org.kh.hw.reservation.domain.Reservation;
@@ -21,19 +24,44 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.google.gson.Gson;
 
 @Controller
 public class ReservationController {
 	
 	@Autowired
 	private ReservationService rService;
+	@Autowired
+	private DoctorService dService;
 	
 	// 동행서비스 예약 페이지로 이동
 	@RequestMapping(value="/reservation/JoinView.kh", method=RequestMethod.GET)
-	public String reservationJoinView(HttpServletRequest request
+	public String reservationJoinView(Model model
 			, @ModelAttribute Reservation reservation) throws UnsupportedEncodingException {
-		return "reservation/withReservation";
+		// 진료과 정보 가져오기
+		List<String> sList = dService.printAllDpt();
+		if (!sList.isEmpty()) {
+			model.addAttribute("sList", sList);
+			return "reservation/withReservation";	
+		} else {
+			model.addAttribute("msg", "진료과 조회 실패");
+			return "common/errorPage";
+		}
+	}
+	
+	// 진료과 선택 시 의사 정보 가져오기
+	@ResponseBody
+	@RequestMapping(value = "/reservation/JoinViewDoctor.kh", method=RequestMethod.GET, produces="application/json;charset=utf-8")
+	public String resJoinViewDoctor(Model model
+			, @RequestParam("doctorDpt") String doctorDpt) throws UnsupportedEncodingException {
+		List<Doctor> dList = dService.printAll(doctorDpt);
+		if(!dList.isEmpty()) {
+			return new Gson().toJson(dList);
+		}
+		return null;
 	}
 	
 	// 동행서비스 예약 등록 실행(비회원)
@@ -83,8 +111,8 @@ public class ReservationController {
 			int result = rService.registerReservationId(reservation);
 			if(result > 0) {
 				HttpSession session = request.getSession();
-				String tresMemId = ((Member)(session.getAttribute("loginUser"))).getMemberId(); // 세션에 저장된 아이디 값
-				Reservation reservationOne = rService.printReservation(tresMemId);
+				String memberId = ((Member)(session.getAttribute("loginUser"))).getMemberId(); // 세션에 저장된 아이디 값
+				Reservation reservationOne = rService.printReservation(memberId);
 				if(reservationOne != null) {
 					model.addAttribute("reservation", reservationOne);
 					return "reservation/withReservationViewId";
@@ -168,8 +196,8 @@ public class ReservationController {
 			, @ModelAttribute Reservation reservation) throws UnsupportedEncodingException {
 		try {
 			HttpSession session = request.getSession();
-			String tresMemId = ((Member)(session.getAttribute("loginUser"))).getMemberId(); // 세션에 저장된 아이디 값
-			Reservation reservationOne = rService.printReservation(tresMemId);
+			String memberId = ((Member)(session.getAttribute("loginUser"))).getMemberId(); // 세션에 저장된 아이디 값
+			Reservation reservationOne = rService.printReservation(memberId);
 			if(reservationOne != null) {
 				model.addAttribute("reservation", reservationOne);
 				return "reservation/withReservationViewId";

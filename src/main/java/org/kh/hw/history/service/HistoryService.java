@@ -16,11 +16,9 @@ public interface HistoryService {
 
 	public int getListCount();
 
-	public List<History> printAll(PageInfo pi);
-
-	public int updateHistory(SqlSession sqlSession, History history);
-
-	public int modifyHistory(History history);
+	public List<History> printAll(PageInfo pi, String doctorId);
 
 	public List<History> printAllById(String memberId);
+
+	public int removeHistory(String resNo);
 }

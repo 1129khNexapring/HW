@@ -35,8 +35,8 @@ public class ResServiceImpl implements ResService {
 		return reservationOne;
 	}
 	@Override
-	public Res printRes(String resMemId) {
-		Res reservationOne = rStore.selectOneByRes(sqlSession, resMemId);
+	public Res printRes(String memberId) {
+		Res reservationOne = rStore.selectOneByRes(sqlSession, memberId);
 		return reservationOne;
 	}
 	@Override
@@ -53,6 +53,26 @@ public class ResServiceImpl implements ResService {
 	public List<Res> printAll(PageInfo pi) {
 		List<Res> rList = rStore.selectAll(sqlSession, pi);
 		return rList;
+	}
+	@Override
+	public List<String> printResAll(String doctorId) {
+		List<String> rList = rStore.selectAllList(sqlSession, doctorId);
+		return rList;
+	}
+	@Override
+	public Res printResNo(String resNo) {
+		Res reservationOne = rStore.selectOne(sqlSession, resNo);
+		return reservationOne;
+	}
+	@Override
+	public int modifyStatus(String resNo) {
+		int update = rStore.updateStatus(sqlSession, resNo);
+		return update;
+	}
+	@Override
+	public int removeStatus(String resNo) {
+		int update = rStore.removeStatus(sqlSession, resNo);
+		return update;
 	}
 	
 }

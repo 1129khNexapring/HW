@@ -87,8 +87,8 @@
 						<div class="cate_name">마이페이지</div>
 					</div>
 					<ul class="snb_nav">
-						<li><a href="#" class="link_sb1">진료이력</a></li>
-    					<li><a href="/qna/Timeline.kh?qnaWriter=${loginUser.memberId }" class="link_sb1" id="point">문의/건의 타임라인</a></li>
+						<li><a href="/member/history.kh" class="link_sb1" id="point">진료이력</a></li>
+    					<li><a href="/qna/Timeline.kh?qnaWriter=${loginUser.memberId }" class="link_sb1">문의/건의 타임라인</a></li>
 						<li><a href="/member/myInfo.kh" class="link_sb1">회원정보수정</a></li>
 						<li><a href="/member/delete.kh" class="link_sb1">회원 탈퇴 </a></li>
 					</ul>
@@ -115,9 +115,9 @@
 											<tr class="space">
 												<td class="ta" id="deptDate">${history.deptDate }</td>
 												<td class="ta" id="department">${history.department }</td>
-												<td class="ta" id="doctorId">${history.doctorId }</td>
-												<td class="ta" id="deptContents">${history.deptContents }</td>
-												<td class="ta" id="prescription">${history.prescription }</td>
+												<td class="ta" id="doctorId">${history.deptStaff }</td>
+												<td class="ta" id="deptContents" style="white-space:pre;">${history.deptContents }</td>
+												<td class="ta" id="prescription" style="white-space:pre;">${history.prescription }</td>
 												<td class="ta" id="charge">${history.charge }</td>
 											</tr>
 										</c:forEach>										

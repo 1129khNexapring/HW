@@ -16,10 +16,18 @@ public interface ReservationStore {
 
 	public int deleteReservation(SqlSession sqlSession, Reservation reservation);
 
-	public Reservation selectOneByRes(SqlSession sqlSession, String tresMemId);
+	public Reservation selectOneByRes(SqlSession sqlSession, String memberId);
 
 	public int selectListCount(SqlSession sqlSession);
 	
 	public List<Reservation> selectAll(SqlSession sqlSession, PageInfo pi);
+
+	public List<String> selectAllList(SqlSession sqlSession, String doctorId);
+
+	public Reservation selectOne(SqlSession sqlSession, String resNo);
+
+	public int updateStatus(SqlSession sqlSession, String resNo);
+
+	public int removeStatus(SqlSession sqlSession, String resNo);
 
 }

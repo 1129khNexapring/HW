@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>일반 예약</title>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="/resources/head.css">
@@ -20,7 +21,6 @@ p {
 .form_table {
     margin-left: 20px;
     position: relative;
-    width: 700px;
     height: 400px;
     padding: 20px;
 }
@@ -167,25 +167,27 @@ p {
                             <form  action="/resId/register.kh" method="post"  enctype="multipart/form-data">
                                 <table>
                                     <tr>
-                                        <td scope="row" id="text_title">진료과</td>
+                                        <td class="td_left" id="text_title">진료과</td>
                                           <td>
-                                          <select title="진료과" onchange="depChange(this)"class="select" name="department">
-                                              <option value="" >선택</option>	
-                                              <option value="내과">내과</option>
-                                              <option value="소아과">소아과</option>
+                                          <select title="진료과" onchange="depChange()" class="select" id="doctorDpt" name="department">
+                                                  <option value="" >선택</option>
+                                              <c:forEach items="${sList }" var="dpt">
+                                                  <option value="${dpt }">${dpt }</option>
+                                              </c:forEach>
                                           </select>
                                           </td>
                                       </tr>
-                                      
-                                          <tr>
-                                              <td scope="row" id="text_title">희망 의료진</td>
-                                              <td class="tdleft">
-                                              <select id="de" class="select" name="deptStaff">
-                                              <option value="선택">선택</option>
+                                      <tr>
+                                          <td class="td_left" id="text_title">희망 의료진</td>
+                                          <td>
+                                              <select id="de" class="select" onchange="staffChange()">
+                                              <option value="">선택</option>
                                               </select>
                                           </td>
                                       </tr>
-                                        <input type="hidden" name="resMemId" value="${loginUser.memberId }" readonly class="input">
+                                        <input type="hidden" name="memberId" value="${loginUser.memberId }" readonly>
+                                        <input type="hidden" name="doctorId" id="doctorId" readonly>
+                                        <input type="hidden" name="deptStaff" id="deptStaff" readonly>
                                     <tr>
                                         <td class="td_left" id="text_title"> 예약자명</td>
                                         <td><input type="text" name="resName" value="${loginUser.memberName }" class="input"></td>
@@ -219,24 +221,26 @@ p {
                                     <form action="/res/register.kh" method="post"  enctype="multipart/form-data">
                                     <table>		
                                         <tr>
-                                            <td scope="row" id="text_title">진료과</td>
+                                            <td class="td_left" id="text_title">진료과</td>
                                               <td>
-                                              <select title="진료과" onchange="depChange(this)"class="select" name="department">
-                                                  <option value="" >선택</option>	
-                                                  <option value="내과">내과</option>
-                                                  <option value="소아과">소아과</option>
+                                              <select title="진료과" onchange="depChange()"class="select" id="doctorDpt" name="department">
+                                                  <option value="" >선택</option>
+                                              <c:forEach items="${sList }" var="dpt">
+                                                  <option value="${dpt }">${dpt }</option>
+                                              </c:forEach>
                                               </select>
                                               </td>
                                           </tr>
-                                          
-                                              <tr>
-                                                  <td scope="row" id="text_title">희망 의료진</td>
-                                                  <td class="tdleft">
-                                                  <select id="de" class="select" name="deptStaff">
-                                                  <option value="선택">선택</option>												
+                                          <tr>
+                                              <td class="td_left" id="text_title">희망 의료진</td>
+                                              <td>
+                                                  <select id="de" class="select" onchange="staffChange()">
+	                                                  <option value="">선택</option>
                                                   </select>
                                               </td>
                                           </tr>
+                                          <input type="hidden" name="doctorId" id="doctorId" readonly>
+                                          <input type="hidden" name="deptStaff" id="deptStaff" readonly>
                                         <tr>
                                             <td class="td_left" id="text_title"> 예약자명</td>
                                             <td><input  class="input" type="text" name="resName" placeholder="이름을 입력하세요."></td>
@@ -276,20 +280,32 @@ p {
 </footer>
 
 <script type="text/javascript">
-    function depChange(e){
-        ;
-         var de_a = ["선택", "조정석", "유연석", "전미도", "신현빈"];
-         var de_b = ["선택", "한석규", "안효섭", "이성경", "소주연"];
-         var target = document.getElementById("de");
-         if(e.value=="내과") var c= de_a;
-         else if(e.value=="소아과") var c = de_b;
-         target.options.length=0;
-         for(x in c){
-             var opt= document.createElement("option");
-             opt.value= c[x];
-             opt.innerHTML= c[x];
-             target.appendChild(opt);
-         }
+    function depChange(){
+    	var doctorDpt = $("#doctorDpt").val();
+    	var target = document.getElementById("de");
+    	$.ajax({
+    		url:'/res/JoinViewDoctor.kh',
+    		type : "get",
+    		data: { "doctorDpt" : doctorDpt },
+    		success : function(dList) {
+    			target.options.length=1;
+    			$.each(dList, function(index, item) {
+	    			var opt= document.createElement("option");
+	                opt.value= item.doctorId;
+	                opt.innerHTML= item.doctorName;
+	                target.appendChild(opt);
+    			})
+    		},
+    		error : function() {
+    			alter("ajax 실패");
+    		}
+    	})
+    }
+    function staffChange(){
+    	var doctorId = $("#de option:checked").val();
+    	var deptStaff = $("#de option:checked").text();
+    	$("#doctorId").val(doctorId);
+    	$("#deptStaff").val(deptStaff);
     }
 </script>
 </body>

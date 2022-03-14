@@ -44,8 +44,8 @@ public class ReservationServiceImpl implements ReservationService{
 	}
 
 	@Override
-	public Reservation printReservation(String tresMemId) {
-		Reservation reservationOne = rStore.selectOneByRes(sqlSession, tresMemId);
+	public Reservation printReservation(String memberId) {
+		Reservation reservationOne = rStore.selectOneByRes(sqlSession, memberId);
 		return reservationOne;
 	}
 	
@@ -59,6 +59,30 @@ public class ReservationServiceImpl implements ReservationService{
 	public List<Reservation> printAll(PageInfo pi) {
 		List<Reservation> rList = rStore.selectAll(sqlSession, pi);
 		return rList;
+	}
+
+	@Override
+	public List<String> printResAll(String doctorId) {
+		List<String> wList = rStore.selectAllList(sqlSession, doctorId);
+		return wList;
+	}
+
+	@Override
+	public Reservation printResNo(String resNo) {
+		Reservation reservationOne = rStore.selectOne(sqlSession, resNo);
+		return reservationOne;
+	}
+
+	@Override
+	public int modifyStatus(String resNo) {
+		int update = rStore.updateStatus(sqlSession, resNo);
+		return update;
+	}
+
+	@Override
+	public int removeStatus(String resNo) {
+		int update = rStore.removeStatus(sqlSession, resNo);
+		return update;
 	}
 
 }

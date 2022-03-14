@@ -82,4 +82,16 @@ public class DoctorServiceImpl implements DoctorService {
 		int result = dStore.checkIdDup(sqlSession, doctorId);
 		return result;
 	}
+
+	@Override
+	public List<String> printAllDpt() {
+		List<String> sList = dStore.selectAllDpt(sqlSession);
+		return sList;
+	}
+
+	@Override
+	public List<Doctor> printAll(String doctorDpt) {
+		List<Doctor> dList = dStore.selectAll(sqlSession, doctorDpt);
+		return dList;
+	}
 }
