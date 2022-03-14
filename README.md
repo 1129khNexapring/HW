@@ -4,10 +4,10 @@
 
 ## Contents
 ### [1. 개요](#개요)
-### [2. 설계의 주안점](#설계의주안점)
-### [3. 사용기술 및 개발환경](#사용기술및개발환경)
-### [4. 프로젝트 기능 구현](#프로젝트기능구현)
-### [5. 주요기능](#주요기능)
+### [2. 설계의 주안점](#설계의-주안점)
+### [3. 사용기술 및 개발환경](#사용기술-및-개발환경)
+### [4. 프로젝트 기능 구현](#프로젝트-기능-구현)
+### [5. 주요 기능](#주요-기능)
 ### [6. Document](#Document)
 
 
@@ -16,14 +16,22 @@
 * 코로나19로 인해 병원 방문객이 많고 거리두기가 필수인 상황에서 병원 홈페이지를 통해 편리함을 제공
 
 ## 설계의 주안점
+* 일반회원 비회원 진료(동행서비스) 예약
+* 동행서비스로 차별화
+* 간단한 예약절차(비회원도 예약 가능)
+* 일반회원과 의사회원으로 회원가입
+* 의사는 일반회원 정보를 받아 환자 진료 이력 확인 및 작성
+* 로그인 후 진료 이력 확인 가능
+* 회원 문의/건의 게시판 작성 및 관리자 답변 작성
+* 문의/건의 타임라인을 통해 답변 유무 확인 가능
 
 ## 사용기술 및 개발환경
 |Category | Detail |
 | ------- | ------ |
 | FrontEnd | HTML5, JS, CSS3, JQuery |
-| BackEnd  | java, Spring/JSP |
+| BackEnd  | Java(JDK 1.8), Spring/JSP |
 | OS       | Windows 10, 11 |
-| IDE      | Eclipse, Visual Studio |
+| IDE      | Eclipse, Visual Studio Code |
 | Server   | Apatch Tomcat(v8.5) |
 | DataBase | Oracle(11g) - SQL Developer |
 
@@ -45,8 +53,8 @@
   + 문의/건의게시판
     + 게시판 글 작성
       + 회원만 글 작성 가능
-    + 댓글 작성
-      + 관리자만 댓글 작성 가능
+    + 답글 작성
+      + 관리자만 답글 작성 가능
   + 문의/건의 타임라인
     +  답변유무 조회
  
@@ -86,13 +94,13 @@
     + 문의/건의게시판
       + 게시판 글 작성
         + 회원만 글 작성 가능
-      + 댓글 작성
-        + 관리자만 댓글 작성 가능
+      + 답글 작성
+        + 관리자만 답글 작성 가능
     + 문의/건의 타임라인
       +  답변유무 조회       
 
 
-## 주요기능
+## 주요 기능
 
 ### 1. 메인화면
 ![메인화면](https://user-images.githubusercontent.com/56354642/157616972-3f0724b1-9d69-4d78-802a-0093c924cc84.PNG)
@@ -147,9 +155,35 @@
 
 ### 6. 고객센터
 
-![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157776383-9e5d4e4b-00a1-4458-91e1-e58702bf7828.PNG)
+![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157787667-73b90c74-6e5f-4beb-9c3e-704c1d330972.PNG)
 
-![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157776386-41b57d6f-6c15-4643-9cc9-c2284b25d3b9.PNG)
+![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157788392-5b68740f-80ca-4690-8832-ebd2c3421477.PNG)
+
+
+### 7. 마이페이지
+진료이력 이미지 추가
+
+![마이페이지 문의건의 타임라인](https://user-images.githubusercontent.com/56354642/157789676-ca2b79cc-f0b7-4331-ac64-3860eb2f176a.PNG)
+
+![마이페이지 회원정보수정](https://user-images.githubusercontent.com/56354642/157789678-914eb9a5-8393-4218-b7ad-48b664c862ef.PNG)
+
+![마이페이지 회원탈퇴](https://user-images.githubusercontent.com/56354642/157789679-0d5e3d65-7e25-4327-a617-1c1d8d195f18.PNG)
+
+
+
+
+### 8. 관리자페이지
+
+![관리자 공지사항 관리](https://user-images.githubusercontent.com/56354642/157787704-5cc0e7b5-b515-40ec-9695-1bdcb6163056.PNG)
+
+![관리자 공지사항관리2](https://user-images.githubusercontent.com/56354642/157789033-70c07c8a-960a-40a6-9065-11419c727d6b.PNG)
+
+![관리자 일반예약 관리](https://user-images.githubusercontent.com/56354642/157787675-3bdfa4c8-5cb8-4554-bac5-6127a8cc1127.PNG)
+
+![관리자 동행서비스 예약관리](https://user-images.githubusercontent.com/56354642/157787683-649c58e3-3eef-4091-a51f-d10f50040206.PNG)
+
+![관리자 문의건의 관리](https://user-images.githubusercontent.com/56354642/157788405-20221c5f-0793-4777-bb82-956742f6df06.PNG)
+
 
 
 ## Document
