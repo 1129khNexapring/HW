@@ -185,7 +185,7 @@ public class MemberController {
 	
 	// 진료이력
 	@RequestMapping(value ="/member/history.kh", method=RequestMethod.GET)
-	public String qnaTimeline(
+	public String memberHistory(
             Model model
             ,HttpSession session) {
 		String memberId = ((Member)session.getAttribute("loginUser")).getMemberId();
