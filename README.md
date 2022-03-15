@@ -165,7 +165,7 @@
 
 
 ### 7. 마이페이지
-진료이력 이미지 추가
+![마이페이지 진료이력](https://user-images.githubusercontent.com/56354642/158286326-f7240ad0-9020-4f8e-aa8c-e2d12d891bf8.PNG)
 
 ![마이페이지 문의건의 타임라인](https://user-images.githubusercontent.com/56354642/157789676-ca2b79cc-f0b7-4331-ac64-3860eb2f176a.PNG)
 
@@ -189,6 +189,12 @@
 ![관리자 문의건의 관리](https://user-images.githubusercontent.com/56354642/157788405-20221c5f-0793-4777-bb82-956742f6df06.PNG)
 
 
+### 9. 진료이력
+![진료이력 화면](https://user-images.githubusercontent.com/56354642/158286319-c3fda44a-8f1d-4cba-8771-0a3da3bcee86.PNG)
+
+![진료이력 상세](https://user-images.githubusercontent.com/56354642/158286322-7606484b-8d9c-41a1-a225-cdbcf93f5e3b.PNG)
+
+![진료이력 등록](https://user-images.githubusercontent.com/56354642/158286324-debc7039-544f-4a86-a0d7-b6fdc34d0b91.PNG)
 
 ## Document
 
