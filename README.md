@@ -323,7 +323,8 @@
 ![2  동행서비스 진료이력 등록](https://user-images.githubusercontent.com/88810856/158346480-5f85e501-f9ed-478a-a2e6-b74a3d579f8b.jpg)
 
 ##### 진료 이력 조회(의사)
-![3  의사 진료이력 조회](https://user-images.githubusercontent.com/88810856/158346481-63bcddf1-5508-4f53-9e38-6d69f8dd8d0c.jpg)
+
+![3  의사 진료이력 조회](https://user-images.githubusercontent.com/56354642/158356313-421bb1cb-4c53-49bc-9214-8cca68fd9001.jpg)
 
 ##### 진료 이력 삭제
 ![4  진료이력 삭제](https://user-images.githubusercontent.com/88810856/158346484-c2105c11-dec8-4a8d-ac5b-9875629276a5.jpg)
