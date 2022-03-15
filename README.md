@@ -193,7 +193,8 @@
 
 ### 2. ERD
 
-![ERD](https://user-images.githubusercontent.com/56354642/157687792-e3119771-d33c-45c5-bc64-86c413a2198d.PNG)
+![ERD](https://user-images.githubusercontent.com/56354642/158345127-806e3af8-1179-45ac-896f-e8da06a6af6a.PNG)
+
 
 
 ### 3. Class Diagram
