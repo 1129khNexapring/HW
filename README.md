@@ -186,27 +186,35 @@
 
 ## Document
 
-1. 유스케이스
+### 1. 유스케이스
 
 ![UML](https://user-images.githubusercontent.com/56354642/157690257-56a9372b-7405-4c17-b734-712b13e12e91.PNG)
 
 
-2. ERD
+### 2. ERD
 
 ![ERD](https://user-images.githubusercontent.com/56354642/157687792-e3119771-d33c-45c5-bc64-86c413a2198d.PNG)
 
-3. Class
-  일반 회원
+
+### 3. Class
+
+#### 일반 회원
 ![일반 회원](https://user-images.githubusercontent.com/88810856/158339457-a025c9ec-cea8-48f7-b6b5-56ca89324ed6.jpg)
-  의사
+
+#### 의사
 ![의사](https://user-images.githubusercontent.com/88810856/158339567-994b9ac6-5b28-4d66-8162-f77b18e62e0f.jpg)
-  일반 예약
+
+#### 일반 예약
 ![일반 예약](https://user-images.githubusercontent.com/88810856/158339606-8b1c7731-134a-489d-a049-e120cf875163.jpg)
-  동행서비스 예약
+
+#### 동행서비스 예약
 ![동행서비스 예약](https://user-images.githubusercontent.com/88810856/158339645-5ecc6a5d-f493-420d-b5cc-b015a241f970.jpg)
-  진료 이력
+
+#### 진료 이력
 ![진료 이력](https://user-images.githubusercontent.com/88810856/158339685-ca68f606-c8ee-451b-a1df-7ec7a605f319.jpg)
-  공지사항
+
+#### 공지사항
 ![공지사항](https://user-images.githubusercontent.com/88810856/158339712-dd28a427-e55d-4053-acc1-71d53552ac3a.jpg)
-  문의/건의
+
+#### 문의/건의
 ![문의/건의](https://user-images.githubusercontent.com/88810856/158339740-e17763d0-b8a7-448d-a971-e4ef68c881d2.jpg)
