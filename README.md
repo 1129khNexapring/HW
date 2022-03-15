@@ -196,7 +196,7 @@
 ![ERD](https://user-images.githubusercontent.com/56354642/157687792-e3119771-d33c-45c5-bc64-86c413a2198d.PNG)
 
 
-### 3. Class
+### 3. Class Diagram
 
 #### 일반 회원
 ![일반 회원](https://user-images.githubusercontent.com/88810856/158339457-a025c9ec-cea8-48f7-b6b5-56ca89324ed6.jpg)
