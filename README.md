@@ -152,12 +152,10 @@
 
 ![동행서비스 예약확인](https://user-images.githubusercontent.com/56354642/157632922-4edadf2d-89f9-4fca-b6fe-a6bc47125f1b.PNG)
 
-
 ### 6. 고객센터
 ![고객센터 공지사항](https://user-images.githubusercontent.com/56354642/157787667-73b90c74-6e5f-4beb-9c3e-704c1d330972.PNG)
 
 ![고객센터 문의건의 게시판](https://user-images.githubusercontent.com/56354642/157788392-5b68740f-80ca-4690-8832-ebd2c3421477.PNG)
-
 
 ### 7. 마이페이지
 ![마이페이지 진료이력](https://user-images.githubusercontent.com/56354642/158286326-f7240ad0-9020-4f8e-aa8c-e2d12d891bf8.PNG)
@@ -179,7 +177,6 @@
 
 ![관리자 문의건의 관리](https://user-images.githubusercontent.com/56354642/157788405-20221c5f-0793-4777-bb82-956742f6df06.PNG)
 
-
 ### 9. 진료이력
 ![진료이력 화면](https://user-images.githubusercontent.com/56354642/158286319-c3fda44a-8f1d-4cba-8771-0a3da3bcee86.PNG)
 
@@ -199,17 +196,17 @@
 ![ERD](https://user-images.githubusercontent.com/56354642/157687792-e3119771-d33c-45c5-bc64-86c413a2198d.PNG)
 
 3. Class
-
+  일반 회원
 ![일반 회원](https://user-images.githubusercontent.com/88810856/158339457-a025c9ec-cea8-48f7-b6b5-56ca89324ed6.jpg)
-
+  의사
 ![의사](https://user-images.githubusercontent.com/88810856/158339567-994b9ac6-5b28-4d66-8162-f77b18e62e0f.jpg)
-
+  일반 예약
 ![일반 예약](https://user-images.githubusercontent.com/88810856/158339606-8b1c7731-134a-489d-a049-e120cf875163.jpg)
-
+  동행서비스 예약
 ![동행서비스 예약](https://user-images.githubusercontent.com/88810856/158339645-5ecc6a5d-f493-420d-b5cc-b015a241f970.jpg)
-
+  진료 이력
 ![진료 이력](https://user-images.githubusercontent.com/88810856/158339685-ca68f606-c8ee-451b-a1df-7ec7a605f319.jpg)
-
+  공지사항
 ![공지사항](https://user-images.githubusercontent.com/88810856/158339712-dd28a427-e55d-4053-acc1-71d53552ac3a.jpg)
-
+  문의/건의
 ![문의/건의](https://user-images.githubusercontent.com/88810856/158339740-e17763d0-b8a7-448d-a971-e4ef68c881d2.jpg)
