@@ -21,10 +21,10 @@
 		<result property="status" column="STATUS" /> 	 	
   	</resultMap>
   	<insert id="insertReservation" parameterType="Reservation">
-  		INSERT INTO TRES VALUES(NULL, 'W'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_TRES_NO.NEXTVAL, #{department}, #{deptStaff}, #{resName}, #{deptDate}, #{deptTime}, #{birth}, #{phone}, #{address}, #{acc}, #{fileName}, #{fileRename}, #{doctorId}, DEFAULT)
+  		INSERT INTO TRES VALUES(NULL, 'W'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_TRES_NO.NEXTVAL, #{department}, #{deptStaff}, #{resName}, #{deptDate}, #{deptTime}, #{birth}, #{phone}, REPLACE(REPLACE(#{address}, ','), ' '), #{acc}, #{fileName}, #{fileRename}, #{doctorId}, DEFAULT)
   	</insert>
   	<insert id="insertReservationId" parameterType="Reservation">
-        INSERT INTO TRES VALUES(#{memberId}, 'W'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_RES_NO.NEXTVAL, #{department}, #{deptStaff}, #{resName}, #{deptDate}, #{deptTime}, #{birth}, #{phone}, #{address}, #{acc}, #{fileName}, #{fileRename}, #{doctorId}, DEFAULT)
+        INSERT INTO TRES VALUES(#{memberId}, 'W'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_RES_NO.NEXTVAL, #{department}, #{deptStaff}, #{resName}, #{deptDate}, #{deptTime}, #{birth}, #{phone}, REPLACE(REPLACE(#{address}, ','), ' '), #{acc}, #{fileName}, #{fileRename}, #{doctorId}, DEFAULT)
     </insert>
 	<select id="selectViewReservation" parameterType="Reservation" resultMap="reservationResultMap">
 		SELECT * FROM TRES WHERE RES_NAME =#{resName} AND PHONE =#{phone} AND BIRTH = #{birth}
