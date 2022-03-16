@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="/resources/head.css">
 <link rel="stylesheet" href="/resources/footer.css">
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7fvgxnrd59"></script>
  <style>
 	#container {
 		margin-bottom: 30px;
@@ -106,8 +107,9 @@
 						<h2 class="tit_page">찾아오시는길</h2>		
 					</div>
 					<div class="section">
-						<img src="/resources/img/찾아오시는길1.PNG" alt="찾아오시는길1" class="img1">
-						<img src="/resources/img/찾아오시는길2.PNG" alt="찾아오시는길2">
+						 <div id="map" style="width:100%;height:35vh;margin:0 auto;"></div>
+						<!-- <img src="/resources/img/찾아오시는길1.PNG" alt="찾아오시는길1" class="img1">-->
+						<img src="/resources/img/찾아오시는길2.PNG" alt="찾아오시는길2"> 
 					</div>
 				</div>
 			</div>
@@ -117,5 +119,51 @@
 		<div class="footer_tit">서울특별시 중구 남대문로 120 대일빌딩 2F, 3F (T: 1544-9970) / F: 02-722-0858)</div>
 		<div id="footer_bottom">Copyright ⓒ 1988-2022 HW Hospital All Right Reserved</div>
 	</footer>
+	
+	
+<script>
+var HOME_PATH = window.HOME_PATH || '.';
+
+
+map = new naver.maps.Map('map', {
+    center: new naver.maps.LatLng(37.56810, 126.98336),
+    zoom: 17
+});
+
+
+var hwhospital = new naver.maps.LatLng(37.56810, 126.98336);
+
+
+
+var markers = [];
+var infowindows = [];
+
+
+markers.push(new naver.maps.Marker({
+    map: map,
+    position: hwhospital
+}));
+
+infowindows.push(new naver.maps.InfoWindow({
+    content: [
+        '<div class="iw_inner">',
+        '   <h3>HW병원</h3>',
+        '</div>'
+    ].join('')
+}));
+
+for(let i=0; i<markers.length; i++){
+    naver.maps.Event.addListener(markers[i], "click", function(e) {
+        if (infowindows[i].getMap()) {
+            infowindows[i].close();
+        } else {
+            infowindows[i].open(map, markers[i]);
+        }
+    });
+}
+
+infowindows[0].open(map, markers[0]);
+</script>
+	
 </body>
 </html>
