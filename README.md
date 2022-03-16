@@ -142,9 +142,9 @@
 ![일반예약 확인](https://user-images.githubusercontent.com/56354642/157625190-247c23e4-7b38-4a93-83f2-c11dc266faaf.PNG)
 
 #### 5-2. 동행서비스 예약
-![비회원 동행서비스 예약](https://user-images.githubusercontent.com/56354642/157630876-5d21d947-8229-4876-a892-a030581bf88a.PNG)
+![비회원 동행서비스 예약](https://user-images.githubusercontent.com/56354642/158528950-706c4d75-46c6-43e1-b723-6c42b2fe647f.PNG)
 
-![회원 동행서비스예약](https://user-images.githubusercontent.com/56354642/157632172-f3df26a6-3583-44ff-a248-b0daf6415bb5.PNG)
+![회원 동행서비스 예약](https://user-images.githubusercontent.com/56354642/158528945-c2d55b01-0651-4e5b-a284-c9ad6be041a5.PNG)
 
 ![동행서비스 예약조회 선택](https://user-images.githubusercontent.com/56354642/157634539-b2b92158-b05d-4756-82aa-36bd17c51d92.PNG)
 
