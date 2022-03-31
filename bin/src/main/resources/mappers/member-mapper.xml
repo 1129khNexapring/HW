@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+	<resultMap type="Member" id="memberResultMap">
+		<id property="memberId" column="MEMBER_ID"/>
+		<result property="memberPw" column="MEMBER_PW"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+		<result property="memberBirth" column="MEMBER_BIRTH"/>
+		<result property="memberGender" column="MEMBER_GENDER"/>
+		<result property="memberPhone" column="MEMBER_PHONE"/>
+		<result property="memberEmail" column="MEMBER_EMAIL"/>
+	</resultMap>
+	<select id="selectLoginMember" parameterType="Member" resultMap="memberResultMap">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+	</select>
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberBirth}, #{memberGender}, #{memberPhone}, #{memberEmail})
+	</insert>
+	<update id="updateMember" parameterType="Member">
+		UPDATE MEMBER SET MEMBER_PW = #{memberPw}, MEMBER_BIRTH = #{memberBirth}, MEMBER_PHONE = #{memberPhone}, MEMBER_EMAIL = #{memberEmail} WHERE MEMBER_ID = #{memberId}
+	</update>
+	<delete id="deleteMember" parameterType="String">
+		DELETE FROM MEMBER WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+	</delete>
+	<select id="find_id" parameterType="String" resultMap="memberResultMap"> SELECT MEMBER_ID FROM MEMBER WHERE MEMBER_NAME =#{memberName} AND MEMBER_EMAIL =#{memberEmail} </select>
+	<select id="find_pwd" parameterType="String" resultMap="memberResultMap"> SELECT MEMBER_PW FROM MEMBER WHERE MEMBER_ID = #{memberId} AND MEMBER_PHONE =#{memberPhone} </select>
+	<select id="checkIdDup" parameterType="Member" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_ID = #{memberId}
+	</select>
+</mapper>

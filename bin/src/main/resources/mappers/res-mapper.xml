@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResMapper">
+    <resultMap type="Res" id="resResultMap">
+        <id property="resNo" column="RES_NO" />
+        <result property="memberId" column="RES_MEMID" />
+        <result property="resName" column="USER_NAME" />
+        <result property="birth" column="USER_BIR" />
+        <result property="phone" column="USER_PHONE" />
+        <result property="department" column="DEPARTMENT" />
+        <result property="deptStaff" column="DEPT_STAFF" />
+        <result property="deptDate" column="DEPT_DATE" />
+        <result property="deptTime" column="DEPT_TIMEDATE" />
+        <result property="doctorId" column="DOCTOR_ID" />
+        <result property="status" column="STATUS" />
+    </resultMap>
+    <insert id="insertRes" parameterType="Res">
+     	INSERT INTO RES VALUES('R'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_RES_NO.NEXTVAL,NULL,#{resName}, #{birth}, #{phone}, #{department}, #{deptStaff}, #{deptDate}, #{deptTime}, #{doctorId}, DEFAULT)
+    </insert>
+    <insert id="insertResId" parameterType="Res">
+        INSERT INTO RES VALUES('R'||TO_CHAR(SYSDATE,'YYMMDD')||SEQ_RES_NO.NEXTVAL,#{memberId}, #{resName}, #{birth}, #{phone}, #{department}, #{deptStaff}, #{deptDate}, #{deptTime}, #{doctorId}, DEFAULT)
+    </insert>
+    <select id="selectViewRes" resultMap="resResultMap"> 
+    	SELECT * FROM RES WHERE USER_NAME =#{resName} AND USER_PHONE =#{phone} AND USER_BIR = #{birth}
+    </select> 
+	<delete id="deleteReservation" parameterType="Res">
+		DELETE FROM RES WHERE USER_NAME =#{resName} AND USER_PHONE =#{phone} AND USER_BIR = #{birth}
+	</delete>
+    <select id="selectOneByRes" parameterType="Res" resultMap="resResultMap">
+		SELECT * FROM RES WHERE RES_MEMID = #{memberId} AND RES_NO = (SELECT MAX(RES_NO) FROM RES WHERE RES_MEMID = #{memberId})
+	</select>
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*) FROM RES WHERE DEPT_DATE > SYSDATE - 1
+	</select>
+	<select id="selectAllList" resultMap="resResultMap">
+		SELECT * FROM RES WHERE DEPT_DATE > SYSDATE - 1 ORDER BY DEPT_DATE DESC
+	</select>
+	<select id="selectResAll" resultType="String">
+		SELECT RES_NO FROM RES WHERE DOCTOR_ID = #{doctorId} AND RES_MEMID IS NOT NULL AND STATUS = 'N'
+	</select>
+	<select id="selectOne" parameterType="Res" resultMap="resResultMap"> 
+    	SELECT * FROM RES WHERE RES_NO = #{resNo}
+    </select>
+    <update id="updateStatus">
+      UPDATE RES SET STATUS = 'Y' WHERE RES_NO = #{resNo }
+   </update>
+   <update id="deleteStatus">
+      UPDATE RES SET STATUS = 'N' WHERE RES_NO = #{resNo }
+   </update>
+ </mapper>

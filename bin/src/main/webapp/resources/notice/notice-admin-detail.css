@@ -1,0 +1,112 @@
+		
+.section {
+	margin-top: 50px;
+}
+
+.bbs {
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.bbs table {
+	width: 100%;
+	border-top: 1px solid #343434;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.ta_t {
+	padding: 15px 20px;
+	text-align: center;
+	border-bottom: 1px solid #c2c2c2;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.bbs_ table th, .bbs table td {
+	padding: 15px 20px;
+	border-bottom: 1px solid #c2c2c2;
+	font-size: 16px;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.tl {
+	text-align: left !important;
+}
+
+.t_da {
+	padding: 0 12px;
+}
+
+.t_da strong {
+	padding-right: 10px;
+}
+
+.t2 {
+	text-align: right;
+}
+
+.t3 {
+	width: 100%;
+	border-bottom: 1px solid #c2c2c2;
+}
+
+.bbs_content {
+	height: 300px;
+	vertical-align: top;
+	border-bottom: 2px solid #ccc;
+}
+
+.list_btn {
+
+	margin-top:40px;
+	padding: 2px;
+	text-align: center;
+	height: 80px;
+}
+
+.list_btn #list_l:hover{
+	background:rgb(14, 74, 129);
+	
+}
+
+#list_l {
+	height: 40px;
+	display: inline-block;
+	border-radius: 2px;
+	padding: 10px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background: rgb(14, 74, 129);
+	text-decoration: none;
+	color: #fff;
+}
+
+
+
+
+

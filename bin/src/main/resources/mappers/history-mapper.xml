@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HistoryMapper">
+	<resultMap type="History" id="historyResultMap">
+		<id property="doctorId" column="DOCTOR_ID"></id>
+		<result property="resNo" column="RES_NO"></result>
+		<result property="resName" column="RES_NAME"></result>
+		<result property="deptDate" column="DEPT_DATE"></result>
+		<result property="department" column="DEPARTMENT"></result>
+		<result property="deptContents" column="DEPT_CONTENTS"></result>
+		<result property="prescription" column="PRESCRIPTION"></result>
+		<result property="charge" column="CHARGE"></result>
+		<result property="memberId" column="MEMBER_ID"></result>
+		<result property="deptStaff" column="DEPT_STAFF"></result>
+	</resultMap>
+	<insert id="insertHistory" parameterType="History">
+		INSERT INTO MHIS VALUES(#{doctorId}, #{resNo}, #{resName}, #{deptDate}, #{department}, #{deptContents}, #{prescription}, #{charge}, #{memberId}, #{deptStaff})
+	</insert>
+	<select id="selectListCount" resultType="_int">
+		<!-- 1개면 가져오면 resultType -->
+		SELECT COUNT(*) FROM MHIS
+	</select>
+	<select id="selectAllList" parameterType="string" resultMap="historyResultMap">
+		<!-- 여러개 가져오면 resultType -->
+		SELECT * FROM MHIS WHERE DOCTOR_ID = #{doctorId} ORDER BY RES_NO
+	</select>
+	<select id="selectOneByNo" resultMap="historyResultMap">
+		SELECT * FROM MHIS WHERE RES_NO = #{resNo}
+	</select>
+	<select id="selectHistoryById" resultMap="historyResultMap">
+	 	SELECT * FROM MHIS WHERE MEMBER_ID = #{memberId} 
+	</select>
+	<delete id="deleteHistory" parameterType="String">
+		DELETE FROM MHIS WHERE RES_NO = #{resNo}
+	</delete>
+</mapper>
