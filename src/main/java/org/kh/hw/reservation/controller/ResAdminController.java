@@ -50,19 +50,13 @@ public class ResAdminController {
 		int totalCount = rService2.getListCount();
 		PageInfo pi = WithResPagination.getPageInfo(currentPage, totalCount);
 		List<Res> rList = rService2.printAll(pi);
-		try {
-		if(!rList.isEmpty() || rList.isEmpty()) {
+		if(!rList.isEmpty()) {
 			model.addAttribute("rList", rList);
 			model.addAttribute("pi", pi);
 			return "admin/reservation";
 		}else {
 			model.addAttribute("msg", "예약 전체 조회 실패");
-			
 			return "common/errorPage";
 		}
-	}catch(Exception e) {
-		model.addAttribute("msg", e.toString());
-		return "common/errorPage";
-	}
 	}
 }
