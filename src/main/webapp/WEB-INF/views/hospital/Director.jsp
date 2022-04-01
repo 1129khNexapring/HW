@@ -11,15 +11,20 @@
 <link rel="stylesheet" href="/resources/head.css">
 <link rel="stylesheet" href="/resources/footer.css">
 <style>
+#content_box {
+	float: left;
+	width: 1250px;
+}
 .section {
 	padding-top: 30px;
 }
 .section1 {
 	height: 480px;
-    margin-left: 30px;
+    margin-left: 5px;
     border-right:  2px solid #ccc;
-	padding-right: 50px;
+	padding-right: 30px;
     float: left;
+    
 }
     .main_img{
         margin-top: 15px;
@@ -29,7 +34,7 @@
     }
 .section2{
     margin-top: 30px;
-    margin-left: 50px;
+   margin-left: 25px;
     width: 45%;
     float: left;
     font-size: 15px;
@@ -38,6 +43,7 @@
     font-family: 'Nanum Gothic','Malgun Gothic','맑은 고딕',sans-serif;
     line-height: 1.9;
     letter-spacing: -0.05em;
+    
 }
 .strong_1{
 	margin-top: 10px;
@@ -118,7 +124,7 @@
                     	<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
                     </c:if>
                     <c:if test="${not empty sessionScope.loginAdmin}">
-                    	<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+                    	<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
                     </c:if>
                 </ul>
             </div>

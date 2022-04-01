@@ -74,7 +74,7 @@
                     	<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
                     </c:if>
                     <c:if test="${not empty sessionScope.loginAdmin}">
-                    	<li><a href="/admin/resList.kh" class="btn_lnb_dep1" id="point">관리자페이지</a></li>
+                    	<li><a href="/notice/adList.kh" class="btn_lnb_dep1" id="point">관리자페이지</a></li>
                     </c:if>
                 </ul>
             </div>
@@ -92,7 +92,8 @@
     					<li><a href="/admin/resList.kh" class="link_sb1">일반 예약 관리</a></li>
 						<li><a href="/admin/withResList.kh" class="link_sb1">동행서비스 예약 관리</a></li>
 						<li><a href="/notice/adlist.kh" class="link_sb1" id="point">공지사항 관리</a></li>   
-						<li><a href="/qna/adlist.kh" class="link_sb1">문의/건의게시판 관리</a></li>					
+						<li><a href="/qna/adlist.kh" class="link_sb1">문의/건의게시판 관리</a></li>	
+						<li><a href="/chat/list.kh" class="link_sb1">실시간 상담 관리</a></li>				
     					</ul>
 			  </div>
 			 <div id="content_box">

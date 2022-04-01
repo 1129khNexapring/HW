@@ -14,7 +14,7 @@
     <title>회원가입 선택</title>
     <style>
         #content{
-            height: 350px;
+            height: 550px;
         }
             #content1{
                 height: 350px;
@@ -190,7 +190,7 @@
                     	<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
                     </c:if>
                     <c:if test="${not empty sessionScope.loginAdmin}">
-                    	<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+                    	<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
                     </c:if>
                 </ul>
             </div>

@@ -97,7 +97,7 @@
 						<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
 					</c:if>
 					<c:if test="${not empty sessionScope.loginAdmin}">
-						<li><a href="/admin/resList.kh" class="btn_lnb_dep1"
+						<li><a href="/notice/adList.kh" class="btn_lnb_dep1"
 							id="point">관리자페이지</a></li>
 					</c:if>
 				</ul>

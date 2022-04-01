@@ -12,6 +12,12 @@
 <link rel="stylesheet" href="/resources/head.css">
 <link rel="stylesheet" href="/resources/footer.css">
 <style>
+
+#content_box {
+	float: left;
+	width: 1250px;
+	
+}
 .section {
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -21,10 +27,10 @@
 	border-right: 1px solid #ccc;
 	float: left;
 	padding-left: 50px;
-	padding-right: 100px;
+	padding-right: 50px;
 }
 .section2 {
-	padding-left: 100px;
+	padding-left: 50px;
 	float: left;
 }
 img {
@@ -123,7 +129,7 @@ img {
                     	<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
                     </c:if>
                     <c:if test="${not empty sessionScope.loginAdmin}">
-                    	<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+                    	<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
                     </c:if>
                 </ul>
             </div>

@@ -45,7 +45,7 @@
 }
 .area {
 	text-align: center;
-	padding-right: 70px;
+	padding-right: 50px;
 	float: left;
 }
 .icon-area, .btn-area {
@@ -65,6 +65,7 @@
     color: #fff;
     cursor: pointer;
     background-color: rgb(14, 74, 129);
+    margin-bottom: 50px;
 }
  </style>
 </head>
@@ -130,7 +131,7 @@
                     	<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
                     </c:if>
                     <c:if test="${not empty sessionScope.loginAdmin}">
-                    	<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+                    	<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
                     </c:if>
                 </ul>
             </div>

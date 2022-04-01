@@ -156,7 +156,6 @@ a {
 	margin-top: 1.3125rem;
 }
 
-
 .admin-chat {
 	display: flex;
 	flex-direction: row-reverse;
@@ -323,7 +322,7 @@ textarea::placeholder {
 						<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
 					</c:if>
 					<c:if test="${not empty sessionScope.loginAdmin}">
-						<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+						<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -419,10 +418,10 @@ textarea::placeholder {
 												</div>
 											</div>
 
-										
+
 											<c:forEach items="${croom}" var="chatroom">
-											
-			
+
+
 												<div class="chat-content">
 													<c:if test="${chatroom.memberId eq loginUser.memberId }">
 

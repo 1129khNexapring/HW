@@ -18,7 +18,6 @@
 #content_box {
 	float: left;
 	width: 1100px;
-	
 }
 
 #content_box .chat_page_title {
@@ -42,14 +41,14 @@ a {
 	text-decoration: none;
 }
 
-.info_msg1{
+.info_msg1 {
 	padding-top: 5px;
 	width: 400px;
 	border: 3px solid rgb(14, 74, 129);
 	text-align: center;
 }
 
-.info_msg2{
+.info_msg2 {
 	margin-top: 15px;
 	padding-top: 5px;
 	width: 400px;
@@ -57,57 +56,54 @@ a {
 	text-align: center;
 }
 
-.material-icons{
+.material-icons {
 	margin-top: 5px;
 	font-size: 30px;
 }
 
-.m2{
-	
+.m2 {
 	
 }
 
-.pro{
+.pro {
 	margin-top: 30px;
 }
 
-#phone{
+#phone {
 	font-size: 45px;
 	margin-top: 40px;
 	margin-bottom: 80px;
 }
 
-.bottom1{
+.bottom1 {
 	width: 5%;
-    float: left;
-   
-   
+	float: left;
 }
 
-.bottom2{
+.bottom2 {
 	margin-top: 45px;
 	width: 10%;
 	float: left;
-	
 }
-.bottom3{
+
+.bottom3 {
 	width: 5%;
 	float: left;
-	
 }
-.bottom4{
+
+.bottom4 {
 	margin-top: 45px;
 	width: 15%;
 	float: left;
-	
 }
-.bottom5{
+
+.bottom5 {
 	margin-top: 40px;
 	width: 60%;
 	float: left;
-	
 }
-.bottom5 .chatBtn{
+
+.bottom5 .chatBtn {
 	width: 100px;
 	height: 50px;
 	background: rgb(14, 74, 129);
@@ -115,7 +111,6 @@ a {
 	cursor: pointer;
 	border: none;
 }
-
 </style>
 </head>
 <body>
@@ -167,7 +162,7 @@ a {
 						<li><a href="/doctor/myInfo.kh" class="btn_lnb_dep1">마이페이지</a></li>
 					</c:if>
 					<c:if test="${not empty sessionScope.loginAdmin}">
-						<li><a href="/admin/resList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
+						<li><a href="/notice/adList.kh" class="btn_lnb_dep1">관리자페이지</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -190,53 +185,54 @@ a {
 				<div id="content_box">
 					<div class="chat_page_title">
 						<h2 class="tit_page">채팅 상담 요청</h2>
-							
+
 					</div>
 					<div class="section">
 						<div class="bbs">
-							<span class="material-icons">list_alt <span class="m1">채팅 상담 요청</span></span>
-							<br><br>
-							
-								<span class="m2">회원/비회원 관계 없이 실시간으로 문의사항을 해결할 수 있습니다.<br>
-								궁금한 내용이 있으시면 채팅을 남겨주세요.</span>
-							
-							
+							<span class="material-icons">list_alt <span class="m1">채팅
+									상담 요청</span></span> <br>
+							<br> <span class="m2">회원/비회원 관계 없이 실시간으로 문의사항을 해결할 수
+								있습니다.<br> 궁금한 내용이 있으시면 채팅을 남겨주세요.
+							</span>
+
+
 							<div>
-								<img src="/resources/img/profile2.PNG" alt="프로필 이미지" class="pro"><br><br>
-								<div class="info_msg1">안녕하세요.HW병원입니다.<br>
-								채팅 내용은 상당 품질 관리를 위해 일정 기간<br>
-								저장됨을 알려드립니다.<br>
-								상담을 시작하려면 우측 하단에 상담요청  <br>
-								버튼을 눌러주세요. <br>
-								채팅을 원치 않으시면 "종료"를 입력해 주세요.<br>
+								<img src="/resources/img/profile2.PNG" alt="프로필 이미지" class="pro"><br>
+								<br>
+								<div class="info_msg1">
+									안녕하세요.HW병원입니다.<br> 채팅 내용은 상당 품질 관리를 위해 일정 기간<br> 저장됨을
+									알려드립니다.<br> 상담을 시작하려면 우측 하단에 상담요청 <br> 버튼을 눌러주세요. <br>
+									채팅을 원치 않으시면 "종료"를 입력해 주세요.<br>
 								</div>
 								<div class="info_msg2">
-								예약부터 간단한 상담까지 빠르고 편리하게 <br>
-								실시간으로 1:1 채팅 상담을 받아보세요.<br>
-								채팅 상담 이용 가능 시간<br>
-								08시 30분 ~ 17시 30분(점심시간 13시 ~ 14시)<br>
-								상담 대기 시간은 20분 내외이며, <br>
-								이용 가능 시간 외 시간의 문의는 상담 시간<br>
-								내 순차적으로 답변 드립니다. 감사합니다.
+									예약부터 간단한 상담까지 빠르고 편리하게 <br> 실시간으로 1:1 채팅 상담을 받아보세요.<br>
+									채팅 상담 이용 가능 시간<br> 08시 30분 ~ 17시 30분(점심시간 13시 ~ 14시)<br>
+									상담 대기 시간은 20분 내외이며, <br> 이용 가능 시간 외 시간의 문의는 상담 시간<br>
+									내 순차적으로 답변 드립니다. 감사합니다.
 								</div>
 							</div>
 							<div class="bottom1">
-								 <i class="fas fa-phone-alt fa-4x" id="phone"></i>
-								  
+								<i class="fas fa-phone-alt fa-4x" id="phone"></i>
+
 							</div>
 							<div class="bottom2">
-								<div>문의전화<br>1588-1588</div>
+								<div>
+									문의전화<br>1588-1588
+								</div>
 							</div>
 							<div class="bottom3">
 								<i class="fas fa-phone-alt fa-4x" id="phone"></i>
 							</div>
 							<div class="bottom4">
-								<div>질병관리청<br>1588-1588</div>
+								<div>
+									질병관리청<br>1588-1588
+								</div>
 							</div>
 							<div class="bottom5">
-								<button type="button" class="chatBtn" onClick="location.href='/chat/write.kh'">상담요청</button>
+								<button type="button" class="chatBtn"
+									onClick="location.href='/chat/write.kh'">상담요청</button>
 							</div>
-							
+
 
 						</div>
 					</div>
