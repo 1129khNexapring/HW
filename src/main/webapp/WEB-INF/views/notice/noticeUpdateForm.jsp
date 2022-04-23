@@ -16,7 +16,20 @@
 	rel="stylesheet">
 	<link rel="stylesheet" href="/resources/head.css">
 	<link rel="stylesheet" href="/resources/footer.css">
+<style>
+#content_box {
+	float: left;
+	width: 1280px;
+		
+}
+.section {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: 660px;
+}
+</style>
 </head>
+
 <body>
 	<div id="header">
         <!-- 로그인, 회원가입 부분 -->

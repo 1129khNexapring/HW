@@ -15,6 +15,7 @@
 	rel="stylesheet">
 	<link rel="stylesheet" href="/resources/head.css">
 	<link rel="stylesheet" href="/resources/footer.css">
+
 </head>
 <body>
 	<div id="header">

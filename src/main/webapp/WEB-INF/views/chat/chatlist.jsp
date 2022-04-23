@@ -292,15 +292,20 @@ a {
 														password="HW" var="dataSource" />
 
 
-													<sql:query var="result" dataSource="${dataSource}">
-
-												
-														SELECT  MEMBER_ID,
-														      COUNT(isReading) AS co
-														FROM CHAT
-														WHERE MEMBER_ID !='admin' AND MEMBER_ID = ? AND ISREADING !='Y'
-														GROUP BY MEMBER_ID 
+													<sql:query var="result" dataSource="${dataSource}">			
+														SELECT MEMBER_ID,
+													    COUNT(isReading) AS co
+													    FROM CHAT
+													    WHERE MEMBER_ID !='admin' AND MEMBER_ID = ? AND ISREADING !='Y'
+														GROUP BY MEMBER_ID
+													    UNION ALL
+													    SELECT NAME,
+													    COUNT(isReading) AS co
+													    FROM CHAT
+													    WHERE NAME !='admin' AND NAME = ? AND ISREADING !='Y'
+													    GROUP BY NAME
 													<sql:param value="${chatroom.memberId}" />
+													<sql:param value= "${chatroom.name}" /> 	
 
 													</sql:query>
 
